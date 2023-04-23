@@ -1,0 +1,53 @@
+// -----------------------------------------------------------------------------
+// This file contains styles that are specific to the home page.
+// -----------------------------------------------------------------------------
+@use "../abstracts" as abs;
+
+.ff-inter{
+  @include abs.font-source-sans(abs.$ff-inter, abs.$clr-black);
+}
+
+.title-carousel{
+  @include abs.font-source-sans(abs.$ff-inter, abs.$clr-black);
+}
+
+.container-carousel{
+  position: relative;
+  display: inline-block;
+}
+
+
+//Hacer un mixin de esto
+.btn-carouselLeft{
+  background-color: abs.$clr-yellow !important;
+  border: abs.$clr-black !important;
+  color: abs.$clr-black !important;
+  opacity: 80% !important;
+  position: absolute;
+  top: -19rem !important;
+  height: 100px;
+}
+
+.btn-carouselRight{
+  background-color: abs.$clr-yellow !important;
+  border: abs.$clr-black !important;
+  color: abs.$clr-black !important;
+  opacity: 80% !important;
+  position: absolute;
+  top: -19rem !important;
+  height: 100px;
+}
+
+.btn-search{
+  background-color: abs.$clr-yellow !important;
+  border: abs.$clr-yellow !important;
+  color: abs.$clr-black;
+
+}
+
+.img-sizeCards {
+  float: left;
+  width: 371px;
+  height: 579px;
+  object-fit: cover;
+}

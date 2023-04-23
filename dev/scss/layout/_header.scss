@@ -1,0 +1,35 @@
+@use "../abstracts" as abs;
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the header of the site/application.
+// -----------------------------------------------------------------------------
+
+.btn-singIn{
+  background-color: abs.$clr-white-cream;
+  color: abs.$clr-black;
+  border: abs.$clr-white-cream;
+}
+
+.btn-register{
+  background-color: abs.$clr-yellow;
+  color: abs.$clr-black;
+  border: abs.$clr-yellow;
+}
+
+.container-banner{
+  position: relative;
+  display: inline-block;
+}
+
+.text-banner{
+  font-size: abs.$fs-banner;
+  position: absolute;
+  bottom: 11rem;
+  right: 39rem;
+}
+
+.yellow-line{
+  color: abs.$clr-yellow;
+  width: 65vw;
+  height: 1vh !important;
+  opacity: 100;
+}
