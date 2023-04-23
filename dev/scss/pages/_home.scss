@@ -7,6 +7,10 @@
   @include abs.font-source-sans(abs.$ff-inter, abs.$clr-black);
 }
 
+.clr-whiteCream{
+  background-color: abs.$clr-white-cream !important;
+}
+
 .title-carousel{
   @include abs.font-source-sans(abs.$ff-inter, abs.$clr-black);
 }

@@ -101,10 +101,155 @@
 }
 
 /*font-sizes*/
+/* custom properties - constants */
+/* font & weight */
+/*font sizes*/
+/* font sizes */
+/*colors*/
+/*    --clr-white: hsl(0,0%,100%);*/
+.social {
+  display: flex;
+}
+
+.social li {
+  list-style: none;
+}
+
+.social li a {
+  display: block;
+  position: relative;
+  width: 100px;
+  height: 100px;
+  line-height: 100px;
+  font-size: 40px;
+  text-align: center;
+  text-decoration: none;
+  color: #404040;
+  margin: 0 30px;
+  transition: 0.5s;
+}
+
+.social li a span {
+  position: absolute;
+  transition: transform 0.5s;
+}
+
+.social li a span:nth-child(1),
+.social li a span:nth-child(3) {
+  width: 100%;
+  height: 3px;
+  background: #404040;
+}
+
+.social li a span:nth-child(1) {
+  top: 0;
+  left: 0;
+  transform-origin: right;
+}
+
+.social li a:hover span:nth-child(1) {
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s;
+}
+
+.social li a span:nth-child(3) {
+  bottom: 0;
+  left: 0;
+  transform-origin: left;
+}
+
+.social li a:hover span:nth-child(3) {
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.5s;
+}
+
+.social li a span:nth-child(2),
+.social li a span:nth-child(4) {
+  width: 3px;
+  height: 100%;
+  background: #404040;
+}
+
+.social li a span:nth-child(2) {
+  top: 0;
+  left: 0;
+  transform: scale(0);
+  transform-origin: bottom;
+}
+
+.social li a:hover span:nth-child(2) {
+  transform: scale(1);
+  transform-origin: top;
+  transition: transform 0.5s;
+}
+
+.social li a span:nth-child(4) {
+  top: 0;
+  right: 0;
+  transform: scale(0);
+  transform-origin: top;
+}
+
+.social li a:hover span:nth-child(4) {
+  transform: scale(1);
+  transform-origin: bottom;
+  transition: transform 0.5s;
+}
+
+.facebook:hover {
+  color: #3b5998;
+}
+
+.facebook:hover span {
+  background: #3b5998;
+}
+
+.twitter:hover {
+  color: #1da1f2;
+}
+
+.twitter:hover span {
+  background: #1da1f2;
+}
+
+.instagram:hover {
+  color: #c32aa3;
+}
+
+.instagram:hover span {
+  background: #c32aa3;
+}
+
+.google:hover {
+  color: #dd4b39;
+}
+
+.google:hover span {
+  background: #dd4b39;
+}
+
+.social li a .twitter {
+  color: #1da1f2;
+}
+
+.social li a:hover:nth-child(3) {
+  color: #c32aa3;
+}
+
+.social li a:hover:nth-child(4) {
+  color: #dd4b39;
+}
+
 .ff-inter {
   font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
   font-size: "Inter", "sans-serif";
   color: rgb(0, 0, 0);
+}
+
+.clr-whiteCream {
+  background-color: rgb(246, 241, 233) !important;
 }
 
 .title-carousel {
@@ -10330,6 +10475,45 @@ textarea.form-control-lg {
   cursor: -webkit-grabbing;
 }
 
+.w350 {
+  width: 100%;
+  height: 350px;
+}
+
+.clr-black {
+  background-color: rgb(0, 0, 0);
+}
+
+.clr-white {
+  color: rgb(255, 255, 255);
+}
+
+.text-Twitter {
+  font-family: var(--ff-NotoSerif);
+}
+
+.icon-Twitter:hover {
+  color: hsl(197, 100%, 47%);
+}
+
+.icon-Instagram:hover {
+  background: radial-gradient(circle farthest-corner at 35% 90%, #fec564, transparent 50%), radial-gradient(circle farthest-corner at 0 140%, #fec564, transparent 50%), radial-gradient(ellipse farthest-corner at 0 -25%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 20% -50%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 0, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 60% -20%, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 100%, #d9317a, transparent), linear-gradient(#6559ca, #bc318f 30%, #e33f5f 50%, #f77638 70%, #fec66d 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.icon-Facebook:hover {
+  color: hsl(220, 46%, 48%);
+}
+
+.footer-bs {
+  position: absolute;
+  width: 100%;
+  min-height: 320px;
+  bottom: 40px;
+  left: 0;
+}
+
 .btn-singIn {
   background-color: rgb(246, 241, 233);
   color: rgb(0, 0, 0);
@@ -10359,6 +10543,10 @@ textarea.form-control-lg {
   width: 65vw;
   height: 1vh !important;
   opacity: 100;
+}
+
+.border-top {
+  border: rgb(79, 32, 13) !important;
 }
 
 /*# sourceMappingURL=main.css.map */
