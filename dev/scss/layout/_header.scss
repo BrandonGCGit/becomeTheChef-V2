@@ -7,6 +7,15 @@
   background-color: abs.$clr-white-cream;
   color: abs.$clr-black;
   border: abs.$clr-white-cream;
+  @include abs.for-phone-only{
+  }
+  @include abs.for-tablet-portrait-up{
+
+  }
+  @include abs.for-desktop-up{
+  }
+  @include abs.for-big-desktop-up{
+  }
 }
 
 .btn-register{
@@ -23,15 +32,43 @@
 .text-banner{
   font-size: abs.$fs-banner;
   position: absolute;
-  bottom: 11rem;
-  right: 39rem;
+
+  @include abs.for-phone-only{
+    font-size: abs.$fs-mdl;
+    bottom: 1rem;
+    right: 8rem;
+  }
+
+  @include abs.for-tablet-portrait-up{
+    font-size: abs.$fs-lg;
+    bottom: 2rem;
+    right:15rem;
+  }
+
+  @include abs.for-desktop-up{
+    font-size: abs.$fs-banner;
+    bottom: 7rem;
+    right: 35rem;
+  }
+
+  @include abs.for-big-desktop-up{
+    font-size: abs.$fs-banner;
+    bottom: 11rem;
+    right: 39rem;
+  }
+
 }
 
 .yellow-line{
-  color: abs.$clr-yellow;
-  width: 65vw;
-  height: 1vh !important;
-  opacity: 100;
+  @include abs.generate-line(abs.$clr-yellow, 1vh, 100%);
+
+  @include abs.for-desktop-up{
+    width: 100%;
+  }
+
+  @include abs.for-big-desktop-up{
+    width: 97%;
+  }
 }
 
 .border-top{

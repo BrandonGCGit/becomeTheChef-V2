@@ -18,6 +18,9 @@
 .container-carousel{
   position: relative;
   display: inline-block;
+  @include abs.for-big-desktop-up{
+    padding-right: 3rem;
+  }
 }
 
 

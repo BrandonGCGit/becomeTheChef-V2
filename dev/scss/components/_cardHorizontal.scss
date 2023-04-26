@@ -1,4 +1,4 @@
-
+@use "../abstracts" as abs;
 .cards-horizontal {
   display: flex;
   flex-wrap: wrap;
@@ -12,6 +12,19 @@
   padding: 1rem;
   max-width: 400px;
   margin: 0 auto;
+  @include abs.for-phone-only{
+
+  }
+  @include abs.for-tablet-portrait-up{
+    max-width: 325px;
+  }
+  @include abs.for-desktop-up{
+    max-width: 370px;
+  }
+  @include abs.for-big-desktop-up{
+    max-width: 400px;
+  }
+
 }
 
 .card_image-horizontal {
@@ -31,12 +44,12 @@
     height: 100px;
     position: relative;
     top: -100px;
-    background: linear-gradient(0deg, #091014 10%, rgba(0, 0, 0, 0) 100%);
+    background: linear-gradient(0deg, abs.$clr-yellow 10%, rgba(0, 0, 0, 0) 100%);
   }
 }
 
 .card-horizontal {
-  background-color: #091014;
+  background-color: abs.$clr-yellow;
   border-radius: 0.25rem;
   box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
   display: flex;
@@ -53,13 +66,15 @@
 .card_title-horizontal {
   margin-top: -50px;
   margin-bottom: 24px;
-  text-shadow: black 1px 0 15px;
-  color: white;
+  text-shadow: abs.$clr-yellow 1px 0 15px;
+  color: abs.$clr-black;
 }
 
 .card_text-horizontal {
-  color: #DDDACB;
+  color: abs.$clr-black;
   font-family: 'Raleway', sans-serif;
+  text-shadow: abs.$clr-black 1px 0 30px;
+  color: abs.$clr-black;
   font-weight: 200;
   p {
     max-width: 700px;
@@ -71,7 +86,7 @@
   top: 10px;
   right: 16px;
   text-align: right;
-  color: white;
+  color: abs.$clr-white-cream;
   font-family: "Raleway", sans-serif;
   height: 24px;
   font-size: 36px;
