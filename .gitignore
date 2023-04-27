@@ -1,2 +1,8 @@
 #Ignora las imgs
 ./dist/img
+
+
+./node_modules
+./gulpfile.js
+./package-lock.json
+./package.json

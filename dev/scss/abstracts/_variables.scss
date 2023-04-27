@@ -74,3 +74,12 @@ $clr-facebook-blue: hsl(220, 46%, 48%);
 
 $bg-orange: hsl(35, 84%, 50%);
 $bg-white: hsl(0, 0%, 100%);
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+);
