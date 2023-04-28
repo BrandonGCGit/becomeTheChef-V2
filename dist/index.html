@@ -32,7 +32,7 @@
                 <img src="./img/logo.png" alt="">
             </div>
             <div class="col-4 mt-4 text-end">
-                <a class="btn fs-5 fw-normal btn-singIn" href="#" role="button">Sing In</a>
+                <a class="btn fs-5 fw-normal btn-singIn shadow" href="#" role="button">Sing In</a>
                 <a class="btn fs-5 btn-register" href="#" role="button">Register</a>
             </div>
         </div>
@@ -54,7 +54,7 @@
     </div>
     <!--Carousel Start -->
     <!--Recipes of the week START -->
-    <div class="row container-carousel">
+    <div class="row container-carousel m-auto">
         <div class="col-12">
             <div class="glide">
                 <div class="glide__track" data-glide-el="track">
@@ -334,7 +334,7 @@
 <!--    =================================================-->
 <!--    FOOTER START-->
 <!--    =================================================-->
-<footer>
+<footer class="">
     
     <div class="container-fluid clr-whiteCream border-top mt-5">
         
@@ -444,4 +444,8 @@
 <!--AOS ANIMATION START-->
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <!--AOS ANIMATION END-->
+
+<script>//<![CDATA[
+    document.write("<script async src='https://HOST:3000/browser-sync/browser-sync-client.js?v=2.27.10'><\/script>".replace("HOST", location.hostname));
+//]]></script>
 </html>

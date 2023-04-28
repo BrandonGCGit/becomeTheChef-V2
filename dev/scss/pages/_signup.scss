@@ -1,0 +1,91 @@
+@use "../abstracts/" as abs;
+
+.width-signup-form {
+    @include abs.for-phone-only {
+    width: 100% !important;
+    }
+
+    @include abs.for-tablet-portrait-up {
+    width: 60% !important;
+    }
+
+    @include abs.for-desktop-up {
+    }
+}
+
+.width-signup-banner {
+    @include abs.for-phone-only {
+    width: 0% !important;
+    }
+
+    @include abs.for-tablet-portrait-up {
+    width: 40% !important;
+    }
+
+    @include abs.for-desktop-up {
+    }
+}
+
+.img-banner-signup {
+    @include abs.border-radius(7rem 0);
+    width: 100vw !important;
+    height: 100vh !important;
+    object-fit: cover;
+    
+}
+
+.text-banner-signup {
+    position: absolute;
+    bottom: 30px;
+    right: 306px;
+    width: 709px;
+    font-size: abs.$fs-lg;
+
+    @include abs.for-phone-only {
+        font-size: 0px;
+    }
+
+    @include abs.for-tablet-portrait-up {
+     bottom: 20px;
+    right: 12px;
+    width: 275px;
+    font-size: abs.$fs-md;    
+    }
+
+    @include abs.for-desktop-up {
+        bottom: 38px;
+        position: absolute;
+        right: 101px;
+        width: 583px;
+        font-size: abs.$fs-mdxl;
+
+    }
+}
+
+.input-vw {
+    width: 25vw;
+    @include abs.for-phone-only {
+    width: 80vw;
+    }
+
+    @include abs.for-tablet-portrait-up {
+    width: 50vw;
+    }
+
+    @include abs.for-desktop-up {
+    }
+}
+
+.margin-inputs-signup {
+    margin-top: 55px;
+    margin-bottom: 55px;
+
+    @include abs.for-phone-only {}
+
+    @include abs.for-tablet-portrait-up {}
+
+    @include abs.for-desktop-up {
+        margin-top: 35px;
+        margin-bottom: 35px;
+    }
+}

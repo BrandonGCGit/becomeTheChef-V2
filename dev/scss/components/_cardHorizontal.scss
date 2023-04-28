@@ -13,7 +13,7 @@
   max-width: 400px;
   margin: 0 auto;
   @include abs.for-phone-only{
-
+    max-width: 349px;
   }
   @include abs.for-tablet-portrait-up{
     max-width: 325px;

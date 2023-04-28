@@ -35,8 +35,8 @@
 
   @include abs.for-phone-only{
     font-size: abs.$fs-mdl;
-    bottom: 1rem;
-    right: 8rem;
+    bottom: 0.8rem;
+    right: 5.3rem;
   }
 
   @include abs.for-tablet-portrait-up{

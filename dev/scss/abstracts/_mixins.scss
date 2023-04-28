@@ -98,3 +98,17 @@
   word-spacing: $space;
   line-height: $lineSpace;
 }
+
+//!MARGIN AND PADDING
+$max: 50;
+$offset: 5;
+$unit: 'px'; //@ Unit
+@mixin margin-padding-generator($className, $styleName) {
+  $i: 0;
+  @while $i <= $max {
+    #{$className + $i} { 
+      #{$styleName}: #{$i + $unit};
+    }
+    $i: $i + $offset;
+  }
+}
