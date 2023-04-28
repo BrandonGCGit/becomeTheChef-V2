@@ -1,0 +1,29 @@
+@use "../abstracts/" as abs;
+
+.text-banner-login {
+    position: absolute;
+    bottom: 30px;
+    right: 306px;
+    width: 709px;
+    font-size: abs.$fs-lg;
+
+    @include abs.for-phone-only {
+        font-size: 0px;
+    }
+
+    @include abs.for-tablet-portrait-up {
+     bottom: 11px;
+    right: 466px;
+    width: 275px;
+    font-size: abs.$fs-md;    
+    }
+
+    @include abs.for-desktop-up {
+        bottom: 497px;
+        position: absolute;
+        right: 759px;
+        width: 481px;
+        font-size: abs.$fs-mdxl;
+
+    }
+}

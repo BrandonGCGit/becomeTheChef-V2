@@ -53,9 +53,9 @@
     }
 
     @include abs.for-desktop-up {
-        bottom: 38px;
+        bottom: 128px;
         position: absolute;
-        right: 101px;
+        right: 126px;
         width: 583px;
         font-size: abs.$fs-mdxl;
 
