@@ -2,8 +2,8 @@
 
 .text-banner-login {
     position: absolute;
-    bottom: 30px;
-    right: 306px;
+    bottom: 302x;
+    right: 1164px;
     width: 709px;
     font-size: abs.$fs-lg;
 
@@ -24,6 +24,10 @@
         right: 759px;
         width: 481px;
         font-size: abs.$fs-mdxl;
+    }
 
+    @include abs.for-big-desktop-up{
+    bottom: 302px;
+    right: 1164px;
     }
 }

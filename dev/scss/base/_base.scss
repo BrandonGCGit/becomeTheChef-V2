@@ -22,3 +22,10 @@
 //@ MARGIN AND PADDING GENERATOR START
 
 //@ MARGIN AND PADDING GENERATOR END
+
+//* VW AND VH GENERATOR START
+@include abs.vh-vw-generator("vh-", "width", "vh");
+
+
+@include abs.vh-vw-generator("vw-", "width", "vw");
+//* VW AND VH GENERATOR START

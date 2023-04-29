@@ -100,10 +100,23 @@
 }
 
 //!MARGIN AND PADDING
-$max: 50;
+$max: 100;
 $offset: 5;
-$unit: 'px'; //@ Unit
+$unit: 'vh'; //@ Unit
 @mixin margin-padding-generator($className, $styleName) {
+  $i: 0;
+  @while $i <= $max {
+    #{$className + $i} { 
+      #{$styleName}: #{$i + $unit};
+    }
+    $i: $i + $offset;
+  }
+}
+
+//!VH AND VW GENERATOR
+$max: 100;
+$offset: 5;
+@mixin vh-vw-generator($className, $styleName, $unit) {
   $i: 0;
   @while $i <= $max {
     #{$className + $i} { 
