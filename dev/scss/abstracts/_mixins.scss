@@ -72,7 +72,7 @@
 
 //Set the radius of components
 @mixin border-radius($pixel...) {
-  border-radius: $pixel;
+  border-radius: $pixel !important;
 }
 
 //Generate shadow for the components
@@ -89,6 +89,7 @@
 @mixin border($width, $style, $color) {
   border: $width $style $color;
 }
+
 
 @mixin letter-spacing($space){
   letter-spacing: $space;

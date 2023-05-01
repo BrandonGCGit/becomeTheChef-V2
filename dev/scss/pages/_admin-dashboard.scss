@@ -1,0 +1,6 @@
+@use "../abstracts/" as abs;
+
+.yellow-right-line{
+    border-right: 3px solid abs.$clr-yellow;
+
+}

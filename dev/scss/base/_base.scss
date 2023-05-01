@@ -4,6 +4,11 @@
 
 @use "../abstracts/" as abs;
 
+
+.w-12 {
+    width: 60px !important;
+}
+
 .w-67 {
     width: 67% !important;
 }
@@ -29,3 +34,20 @@
 
 @include abs.vh-vw-generator("vw-", "width", "vw");
 //* VW AND VH GENERATOR START
+
+
+// ?BORDER RADIUS START
+
+.border-radius-0{
+@include abs.border-radius(0px);
+}
+
+.border-radius-25{
+@include abs.border-radius(12px);
+}
+
+
+// ?BORDER RADIUS START
+
+// !BORDER START
+// !BORDER END
