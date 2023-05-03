@@ -117,11 +117,12 @@ $unit: 'vh'; //@ Unit
 //!VH AND VW GENERATOR
 $max: 100;
 $offset: 5;
+$imp: "!important";
 @mixin vh-vw-generator($className, $styleName, $unit) {
   $i: 0;
   @while $i <= $max {
     #{$className + $i} { 
-      #{$styleName}: #{$i + $unit};
+      #{$styleName}: #{$i + $unit} + $imp;
     }
     $i: $i + $offset;
   }

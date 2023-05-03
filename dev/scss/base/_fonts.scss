@@ -1,3 +1,37 @@
 // -----------------------------------------------------------------------------
 // This file contains all @font-face declarations, if any.
 // -----------------------------------------------------------------------------
+
+@use "../abstracts" as abs;
+
+.fs-xsm{
+  font-size: abs.$fs-xsm;
+}
+
+.fs-sm{
+  font-size: abs.$fs-sm;
+}
+
+.fs-rg{
+  font-size: abs.$fs-rg;
+}
+
+.fs-md{
+  font-size: abs.$fs-md;
+}
+
+.fs-mdl{
+  font-size: abs.$fs-mdl;
+}
+
+.fs-mdxl{
+  font-size: abs.$fs-mdxl;
+}
+
+.fs-lg{
+  font-size: abs.$fs-lg;
+}
+
+.fs-xlg{
+  font-size: abs.$fs-xlg;
+}

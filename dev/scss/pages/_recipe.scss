@@ -1,8 +1,6 @@
 @use "../abstracts" as abs;
 
-.border-radius-exterior {
-  @include abs.border-radius(0.5rem);
-}
+
 
 .border-radius-left {
   @include abs.border-radius(0, 0.5rem);

@@ -21,112 +21,130 @@
 </head>
 <body class="">
 
-<section class="container mt-5">
+<section id="app" class="container mt-5">
     
     <!--Header Start-->
     <!--Content:Logo, Btn Sing in, Btn Register, img banner, yellow line-->
     
     <header>
-        <div class="row shadow m-auto py-3 rounded clr-whiteCream">
-            <div class="col-7">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
                 <a href="index.html">
-                <img src="./img/LOGO NEGRO.png" alt="">
+                    <img src="./img/LOGO NEGRO.png" alt="">
                 </a>
-            </div>
-            <div class="col-4 mt-4 text-end">
-                <a class="btn fs-5 fw-normal btn-singIn shadow" href="./login.html" role="button">Log in</a>
-                <a class="btn fs-5 btn-register" href="./signup.html" role="button">Sign up</a>
-            </div>
-        </div>
-        <hr  class="yellow-line">
-        <div class="row mt-5">
-            <div class="col-12">
-                <div class="container-banner">
-                    <p class="ms-5 text-banner"><span class="fw-bold">You</span> are what you <span
-                            class="fw-bold">eat</span></p>
-                    <img class="w-100" src="./img/banner.png" alt="">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 g-5 me-2">
+                        <li class="nav-item mx-3">
+                            <a class="btn fs-5 fw-normal" href="#index-recipes" role="button">Recipes</a>
+                        </li>
+                        <li class="nav-item mx-3">
+                            <a class="btn fs-5 fw-normal" href="#index-recipesOfTheWeek" role="button">Recipes of the week</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link btn btn-lg fs-5 fw-normal btn-singIn border-radius-login" href="./login.html" role="button">Log in</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link btn btn-lg fs-5 btn-register border-radius-signup" href="./signup.html" role="button">Sign up</a>
+                        </li>
+                    </ul>
                 </div>
-                <hr class="mt-5 yellow-line">
+            </div>
+        </nav>
+        <hr  class="yellow-line">
+        <div class="container-fluid">
+            <div class="row mt-5">
+                <div class="col-12">
+                    <div class="container-banner">
+                        <p class="ms-5 text-banner"><span class="fw-bold">You</span> are what you <span
+                                class="fw-bold">eat</span></p>
+                        <img class="w-100" src="./img/banner.png" alt="">
+                    </div>
+                    <hr class="mt-5 yellow-line">
+                </div>
             </div>
         </div>
     </header>
     <!--Header End-->
-    <div class="row-cols-1 my-5 ">
+    <div  id="index-recipesOfTheWeek" class="row-cols-1 my-5 ">
         <h3 class="fw-bold title-carousel">RECIPES OF THE <span class="yellow-line">WEEK</span></h3>
     </div>
     <!--Carousel Start -->
+    
     <!--Recipes of the week START -->
-    <div class="row container-carousel m-auto">
-        <div class="col-12">
+    <divclass="row container-carousel m-auto">
+    <div class="col-12">
+        <div class="glide">
+            <div class="glide__track" data-glide-el="track">
+                <ul class="glide__slides">
+                    <li class="glide__slide">
+                        <img class="img-sizeCards" src="./img/recipe%20(2).png" alt="">
+                    </li>
+                    <li class="glide__slide">
+                        <img class="img-sizeCards" src="./img/recipe%20(2).png" alt="">
+                    </li>
+                    <li class="glide__slide">
+                        <img class="img-sizeCards" src="./img/recipe%20(3).png" alt="">
+                    </li>
+                    <li class="glide__slide">
+                        <img class="img-sizeCards" src="./img/recipe%20(5).png" alt="">
+                    </li>
+                    <li class="glide__slide">
+                        <img class="img-sizeCards" src="./img/recipe%20(6).png" alt="">
+                    </li>
+                    <li class="glide__slide">
+                        <img class="img-sizeCards" src="./img/recipe%20(7).png" alt="">
+                    </li>
+                    <li class="glide__slide">
+                        <img class="img-sizeCards" src="./img/recipe%20(8).png" alt="">
+                    </li>
+                    <li class="glide__slide">
+                        <img class="img-sizeCards" src="./img/recipe%20(9).png" alt="">
+                    </li>
+                    <li class="glide__slide">
+                        <img class="img-sizeCards" src="./img/recipe%20(10).png" alt="">
+                    </li>
+                    <li class="glide__slide">
+                        <img class="img-sizeCards" src="./img/recipe%20(6).png" alt="">
+                    </li>
+                </ul>
+            </div>
             <div class="glide">
-                <div class="glide__track" data-glide-el="track">
-                    <ul class="glide__slides">
-                        <li class="glide__slide">
-                            <img class="img-sizeCards" src="./img/recipe%20(1).png" alt="">
-                        </li>
-                        <li class="glide__slide">
-                            <img class="img-sizeCards" src="./img/recipe%20(2).png" alt="">
-                        </li>
-                        <li class="glide__slide">
-                            <img class="img-sizeCards" src="./img/recipe%20(3).png" alt="">
-                        </li>
-                        <li class="glide__slide">
-                            <img class="img-sizeCards" src="./img/recipe%20(5).png" alt="">
-                        </li>
-                        <li class="glide__slide">
-                            <img class="img-sizeCards" src="./img/recipe%20(6).png" alt="">
-                        </li>
-                        <li class="glide__slide">
-                            <img class="img-sizeCards" src="./img/recipe%20(7).png" alt="">
-                        </li>
-                        <li class="glide__slide">
-                            <img class="img-sizeCards" src="./img/recipe%20(8).png" alt="">
-                        </li>
-                        <li class="glide__slide">
-                            <img class="img-sizeCards" src="./img/recipe%20(9).png" alt="">
-                        </li>
-                        <li class="glide__slide">
-                            <img class="img-sizeCards" src="./img/recipe%20(10).png" alt="">
-                        </li>
-                        <li class="glide__slide">
-                            <img class="img-sizeCards" src="./img/recipe%20(6).png" alt="">
-                        </li>
-                    </ul>
-                </div>
-                <div class="glide">
-                    <div class="glide__arrows" data-glide-el="controls">
-                        <button class="glide__arrow glide__arrow--left btn-carouselLeft" data-glide-dir="<">
-                            <span class="material-symbols-outlined">arrow_back_ios</span>
-                        </button>
-                        <button class="glide__arrow glide__arrow--right btn-carouselRight" data-glide-dir=">">
-                            <span class="material-symbols-outlined">arrow_forward_ios</span>
-                        </button>
-                    </div>
-                </div>
-                <div class="glide">
-                    <div class="glide__bullets" data-glide-el="controls[nav]">
-                        <button class="glide__bullet" data-glide-dir="=0"></button>
-                        <button class="glide__bullet" data-glide-dir="=1"></button>
-                        <button class="glide__bullet" data-glide-dir="=2"></button>
-                        <button class="glide__bullet" data-glide-dir="=3"></button>
-                        <button class="glide__bullet" data-glide-dir="=4"></button>
-                        <button class="glide__bullet" data-glide-dir="=5"></button>
-                        <button class="glide__bullet" data-glide-dir="=6"></button>
-                        <button class="glide__bullet" data-glide-dir="=7"></button>
-                        <button class="glide__bullet" data-glide-dir="=8"></button>
-                        <button class="glide__bullet" data-glide-dir="=9"></button>
-                    </div>
+                <div class="glide__arrows" data-glide-el="controls">
+                    <button class="glide__arrow glide__arrow--left btn-carouselLeft" data-glide-dir="<">
+                        <span class="material-symbols-outlined">arrow_back_ios</span>
+                    </button>
+                    <button class="glide__arrow glide__arrow--right btn-carouselRight" data-glide-dir=">">
+                        <span class="material-symbols-outlined">arrow_forward_ios</span>
+                    </button>
                 </div>
             </div>
-            <hr class="mt-5 yellow-line">
+            <div class="glide">
+                <div class="glide__bullets" data-glide-el="controls[nav]">
+                    <button class="glide__bullet" data-glide-dir="=0"></button>
+                    <button class="glide__bullet" data-glide-dir="=1"></button>
+                    <button class="glide__bullet" data-glide-dir="=2"></button>
+                    <button class="glide__bullet" data-glide-dir="=3"></button>
+                    <button class="glide__bullet" data-glide-dir="=4"></button>
+                    <button class="glide__bullet" data-glide-dir="=5"></button>
+                    <button class="glide__bullet" data-glide-dir="=6"></button>
+                    <button class="glide__bullet" data-glide-dir="=7"></button>
+                    <button class="glide__bullet" data-glide-dir="=8"></button>
+                    <button class="glide__bullet" data-glide-dir="=9"></button>
+                </div>
+            </div>
         </div>
-        <!--Recipes of the week END -->
-        <!--Carousel End-->
+        <hr class="mt-5 yellow-line">
+    </div>
+    <!--Recipes of the week END -->
+    <!--Carousel End-->
     </div>
     
     
     <!--Recipes START -->
-    <div class="row m-auto my-5  ">
+    <div id="index-recipes" class="row m-auto my-5  ">
         <div class="col-5">
             <h3 class="title-carousel fw-normal fw-bold">RECIPES</h3>
         </div>
@@ -202,6 +220,8 @@
                                 <p class="fs-5"><span class="material-symbols-outlined me-2 icon">menu_book</span> Hard
                                 </p>
                             </div>
+                            
+                            <a href="#" class="btn rounded-3 btn-lg my-1 clr-yellow w-100" role="button">View recipe</a>
                         </div>
                     </div>
                 </li>
@@ -226,6 +246,8 @@
                                 <p class="fs-5"><span class="material-symbols-outlined me-2 icon">menu_book</span> Hard
                                 </p>
                             </div>
+                            
+                            <a href="#" class="btn rounded-3 btn-lg my-1 clr-yellow w-100" role="button">View recipe</a>
                         </div>
                     </div>
                 </li>
@@ -250,6 +272,8 @@
                                 <p class="fs-5"><span class="material-symbols-outlined me-2 icon">menu_book</span> Hard
                                 </p>
                             </div>
+                            
+                            <a href="#" class="btn rounded-3 btn-lg my-1 clr-yellow w-100" role="button">View recipe</a>
                         </div>
                     </div>
                 </li>
@@ -274,6 +298,7 @@
                                 <p class="fs-5"><span class="material-symbols-outlined me-2 icon">menu_book</span> Hard
                                 </p>
                             </div>
+                            <a href="#" class="btn btn-lg my-1 clr-yellow w-100" role="button">View recipe</a>
                         </div>
                     </div>
                 </li>
@@ -298,6 +323,7 @@
                                 <p class="fs-5"><span class="material-symbols-outlined me-2 icon">menu_book</span> Hard
                                 </p>
                             </div>
+                            <a href="#" class="btn rounded-3 btn-lg my-1 clr-yellow w-100" role="button">View recipe</a>
                         </div>
                     </div>
                 </li>
@@ -322,6 +348,8 @@
                                 <p class="fs-5"><span class="material-symbols-outlined me-2 icon">menu_book</span> Hard
                                 </p>
                             </div>
+                            
+                            <a href="#" class="btn rounded-3 btn-lg my-1 clr-yellow w-100" role="button">View recipe</a>
                         </div>
                     </div>
                 </li>
@@ -405,9 +433,19 @@
 <!--    FOOTER END-->
 <!--    =================================================-->
 </body>
+
 <!--BootStrap JavaScript START-->
-<script src="./js/bootstrap/index.esm.js"></script>
-<script src="./js/bootstrap/index.umd.js"></script>
+
+<!--BootStrap-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
+
+<!-- VueJS -->
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+<!--Custom Events MITT-->
+<script src="https://unpkg.com/mitt/dist/mitt.umd.js"></script>
 <!--BootStrap JavaScript END-->
 
 <!--Glide JavaScript START-->
@@ -433,7 +471,7 @@
                 peek: 15,
             },
             1300: {
-                gap: 140,
+                gap: 180,
                 perView: 3,
                 peek: 15,
             }
@@ -448,6 +486,6 @@
 <!--AOS ANIMATION END-->
 
 <script>//<![CDATA[
-    document.write("<script async src='https://HOST:3000/browser-sync/browser-sync-client.js?v=2.27.10'><\/script>".replace("HOST", location.hostname));
+document.write("<script async src='https://HOST:3000/browser-sync/browser-sync-client.js?v=2.27.10'><\/script>".replace("HOST", location.hostname));
 //]]></script>
 </html>

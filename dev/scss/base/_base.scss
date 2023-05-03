@@ -2,7 +2,7 @@
 // This file contains very basic styles.
 // -----------------------------------------------------------------------------
 
-@use "../abstracts/" as abs;
+@use "../abstracts" as abs;
 
 
 .w-12 {
@@ -13,6 +13,7 @@
     width: 67% !important;
 }
 
+
 //!CLR START
 .clr-whiteCream {
     background-color: abs.$clr-white-cream !important;
@@ -22,6 +23,10 @@
     background-color: abs.$clr-yellow !important;
 }
 
+.clr-yellow-light{
+    color: abs.$clr-yellow;
+}
+
 //!CLR END
 
 //@ MARGIN AND PADDING GENERATOR START
@@ -29,11 +34,14 @@
 //@ MARGIN AND PADDING GENERATOR END
 
 //* VW AND VH GENERATOR START
-@include abs.vh-vw-generator("vh-", "width", "vh");
+//@include abs.vh-vw-generator("vh-", "height", "vh");
 
-
-@include abs.vh-vw-generator("vw-", "width", "vw");
+//@include abs.vh-vw-generator("vw-", "width", "vw");
 //* VW AND VH GENERATOR START
+
+.vh-25{
+    height: 25vh !important;
+}
 
 
 // ?BORDER RADIUS START
@@ -46,8 +54,27 @@
 @include abs.border-radius(12px);
 }
 
+.border-radius-login{
+    @include abs.border-radius(10px 0px 0px 10px);
+}
+
+.border-radius-signup{
+    @include abs.border-radius(0px 10px 10px 0px);
+}
+
+.border-radius-exterior {
+    @include abs.border-radius(0.5rem);
+}
+
+.border-radius-right{
+    @include abs.border-radius(0 0.5rem 0.5rem 0);
+}
 
 // ?BORDER RADIUS START
 
 // !BORDER START
 // !BORDER END
+
+
+// ?Font Size START
+// ?Font Size END
