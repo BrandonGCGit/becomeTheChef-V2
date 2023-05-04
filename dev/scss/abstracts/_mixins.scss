@@ -45,10 +45,13 @@
 
 //Media queries
 @mixin for-phone-only {
-  @media (min-width: 0px) and (max-width: 599px)  { @content; }
+  @media(max-width: 576px)  { @content; }
+}
+@mixin for-phone-only {
+  @media (min-width: 0px) and (max-width: 678px)  { @content; }
 }
 @mixin for-tablet-portrait-up {
-  @media (min-width: 600px) and (max-width: 899px) { @content; }
+  @media (min-width: 679px) and (max-width: 899px) { @content; }
 }
 @mixin for-tablet-landscape-up {
   @media (min-width: 900px) and (max-width: 1199px) { @content; }
