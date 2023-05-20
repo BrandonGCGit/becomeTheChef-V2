@@ -9,7 +9,7 @@
       <!--!FORM START -->
       <div class="col-5 justify-content-center width-signup-form">
         <div class="d-flex justify-content-center my-5">
-          <router-link :to="{name: '/'}"><img src="/img/LOGO NEGRO.png" alt="Logo"></router-link>
+          <router-link :to="{name: '/'}"><img src="/img/LOGO%20NEGRO.png" alt="Logo"></router-link>
         </div>
         <div class="d-flex justify-content-center my-5">
           <h3 class="fs-1"> <span class="fw-bold">Sign up</span> with us today</h3>

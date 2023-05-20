@@ -18,7 +18,7 @@
       <!--!FORM START -->
       <div class="col-5 justify-content-center width-signup-form">
         <div class="d-flex justify-content-center my-5">
-          <router-link :to="{name: '/'}"><img src="/img/LOGO NEGRO.png" alt="Logo"></router-link>
+          <router-link :to="{name: '/'}"><img src="/img/LOGO%20NEGRO.png" alt="Logo"></router-link>
         </div>
         <div class="d-flex justify-content-center my-5">
           <h3 class="fs-1"> <span class="fw-bold">Welcome Back</span></h3>
@@ -40,8 +40,9 @@
                 <!--!PASSWORD START-->
                 <div class="mb-2">
                   <input type="password"
-                         class="margin-inputs-signup form-control-plaintext border-bottom border-top-0 fs-6 border-dark"
+                         class="margin-inputs-signup form-control-plaintext border-bottom border-top-0 fs-6 border-dark mb-3"
                          id="register_password" placeholder="Password" name="register_password">
+                  <router-link :to="{name: 'forgotPassword'}" class="link-info d-flex justify-content-end">Forgot Password?</router-link>
                 </div>
                 <!--!PASSWORD START-->
                 <!--!BTN SING UP START-->

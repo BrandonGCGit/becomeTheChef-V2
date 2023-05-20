@@ -8,7 +8,7 @@
     <div class="row m-auto">
       <div class="col width-signup-form vh-100">
         <div class="d-flex justify-content-center my-5">
-          <router-link :to="{name: '/'}"><img src="/img/LOGO NEGRO.png" alt="Logo"></router-link>
+          <router-link :to="{name: '/'}"><img src="/img/LOGO%20NEGRO.png" alt="Logo"></router-link>
         </div>
         <div class="d-flex justify-content-center mt-5 ff-inter">
           <h3 class="fs-1 ff-inter">Forgot password?</h3>
@@ -35,8 +35,8 @@
                 </div>
                 <!--!BTN SING UP END-->
 
-                <p class="mb-4 text-center">Remember password? <a href="login.php"
-                                                                  class="link-info">Login</a>
+                <p class="mb-4 text-center">Remember password?
+                  <router-link :to="{name: 'login'}" class="link-info">Log in</router-link>
                 </p>
               </div>
             </div>

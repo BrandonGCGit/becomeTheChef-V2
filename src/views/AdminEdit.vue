@@ -3,54 +3,10 @@
 </script>
 
 <template>
-  <section class="container-fluid clr-whiteCream">
+  <section class="container-fluid">
     <div class="row">
       <!-- *Tool Bar START -->
-      <div class="col-2 d-flex align-items-center flex-column shadow vh-100">
-        <img class="w-50 mt-4" src="/img/LOGO NEGRO.png" alt="">
-        <router-link :to="{name: 'adminDashboard'}" class="btn m-auto mt-5 text-dark clr-yellow fs-5" role="button">List Recipes</router-link>
-
-        <router-link :to="{name: '/'}" class="w-100 btn btn-primary mb-3 text-dark btn-danger fs-5" role="button">Logout</router-link>
-        <!-- *Tool Bar END -->
-      </div>
-      <!-- @Content START -->
-      <div class="col-10">
-
-        <div class="row border-bottom mx-3">
-          <!-- !Time -->
-          <div class="col-5 d-flex justify-content-center my-4 py-3 yellow-right-line">
-                        <span class="material-symbols-outlined fs-3 mt-1 me-2">
-                            calendar_month
-                        </span>
-            <p class="fs-4 ff-inter">
-              29 April
-            </p>
-          </div>
-          <!-- !Time -->
-
-          <!-- @Search -->
-          <div class="col-5 d-flex justify-content-center  align-items-center my-4 py-3 yellow-right-line">
-            <div class="input-group mb-3 w-75">
-              <input type="text" class="form-control clr-whiteCream" placeholder="Hamburger..."
-                     aria-label="Username" aria-describedby="basic-addon1">
-              <span type="button" class="input-group-text btn btn-dark btn-search" id="basic-addon1">
-                                <span class="material-symbols-outlined text-dark ">search</span>
-                            </span>
-            </div>
-          </div>
-          <!-- @Search -->
-
-          <!-- *User -->
-          <div class="col-2 d-flex justify-content-center  align-items-center  my-4 py-3">
-                        <span class="material-symbols-outlined fs-3 pb-3 me-2">
-                            account_circle
-                        </span>
-            <p class="fs-4 ff-inter">
-              Admin-234
-            </p>
-          </div>
-          <!-- *User -->
-        </div>
+      <div class="col-12">
         <div class="row border-bottom mx-3">
           <div class="col">
             <h3 class="ff-inter fw-bold ps-4 mt-4 mb-3">
@@ -229,7 +185,7 @@
           <!-- @FORME END -->
           <!-- *RECIPE IMG START -->
           <div class="col-2 mt-4">
-            <img class="img-fluid img-thumbnail" src="/img/recipe (1).png" alt="">
+            <img class="img-fluid img-thumbnail" src="/img/recipe%20(1).png" alt="">
             <div class="input-group mt-2">
               <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
             </div>

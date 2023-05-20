@@ -8,36 +8,6 @@ export default {
 <template>
 
   <div class="container mt-5" >
-    <header>
-      <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-          <router-link :to="{name: '/'}"><img src="/img/LOGO NEGRO.png" alt="Logo"></router-link>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="material-symbols-outlined">menu</span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 g-5 me-2">
-              <li class="nav-item mx-3">
-                <a class="btn fs-5 fw-normal" href="#index-recipes" role="button">Recipes</a>
-              </li>
-              <li class="nav-item mx-3">
-                <a class="btn fs-5 fw-normal" href="#index-recipesOfTheWeek" role="button">Recipes of the week</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link btn btn-lg fs-5 fw-normal btn-singIn border-radius-login" href="./login.html" role="button">Log in</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link btn btn-lg fs-5 btn-register border-radius-signup" href="./signup.html" role="button">Sign up</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </header>
-    <hr class="yellow-line mt-5 w-100">
-    <!--?Header End-->
-
-
     <!--*Recipes Banner START -->
     <div class="row m-auto clr-whiteCream border-radius-exterior">
       <div class="col-fluid-5 container-banner-text border-radius-left ff-inter">
@@ -61,7 +31,7 @@ export default {
       </div>
       <div class="col-7 px-0 container-banner-img position-relative">
         <div class="card_price-horizontal position-absolute">
-          <button class="btn bg-transparent fs-1"><span class="material-symbols-outlined fs-1 icon me-2 ">favorite</span>54</button>
+          <button class="btn bg-transparent fs-1"><i class="bi bi-heart pe-2"></i>54</button>
         </div>
         <img class="img-banner border-radius-right w-100" src="img/recipe%20(4).png" alt="">
       </div>
@@ -214,82 +184,30 @@ export default {
           <li class="cards_item-horizontal mx-0">
             <div class="card-horizontal">
               <div class="card_price-horizontal">
-
-                <p><span class="material-symbols-outlined fs-3 icon me-2">favorite</span>54</p>
+                <p><i class="bi bi-heart pe-2"></i>54</p>
               </div>
-              <div class="card_image-horizontal"><img src="../public/img/recipe%20(8).png"
-                                                      alt="mixed vegetable salad in a mason jar. "></div>
+              <div class="card_image-horizontal"><img
+                  src="/img/recipe%20(2).png"
+                  alt="mixed vegetable salad in a mason jar. "></div>
               <div class="card_content-horizontal">
-                <h2 class="card_title-horizontal fs-2 text-truncate">Spicy Garlic Shrimp Stir Fry</h2>
+                <h2 class="card_title-horizontal fs-2 text-truncate">Greek Yogurt Parfait with Fresh Berries</h2>
                 <div class="card_text-horizontal">
-                  <p class="fs-5"><span class="material-symbols-outlined me-2 icon">alarm</span> 15
-                    min
-                  </p>
-                  <p class="fs-5"><span class="material-symbols-outlined me-2 icon">restaurant</span>
-                    13
-                    Portions</p>
-                  <p class="fs-5"><span class="material-symbols-outlined me-2 icon">menu_book</span>
-                    Hard
-                  </p>
+                  <ul class="list-unstyled pb-1 gap-3">
+                    <li class="fs-5 mb-1">
+                      <i class="bi bi-alarm pe-2"></i>
+                      15 min
+                    </li>
+                    <li class="fs-5 mb-1">
+                      <i class="bi bi-award pe-2"></i>
+                      13 portions</li>
+                    <li class="fs-5 mb-1">
+                      <i class="bi bi-book pe-2"></i>
+                      Hard</li>
+                  </ul>
                 </div>
 
-                <a href="#" class="btn rounded-3 btn-lg my-1 clr-yellow w-100" role="button">View recipe</a>
-              </div>
-            </div>
-          </li>
-        </a>
-
-        <a href="#" class="text-decoration-none">
-          <li class="cards_item-horizontal mx-0">
-            <div class="card-horizontal">
-              <div class="card_price-horizontal">
-                <p><span class="material-symbols-outlined fs-3 icon me-2">favorite</span>54</p>
-              </div>
-              <div class="card_image-horizontal"><img src="../public/img/recipe%20(8).png"
-                                                      alt="mixed vegetable salad in a mason jar. "></div>
-              <div class="card_content-horizontal">
-                <h2 class="card_title-horizontal fs-2 text-truncate">Spicy Garlic Shrimp Stir Fry</h2>
-                <div class="card_text-horizontal">
-                  <p class="fs-5"><span class="material-symbols-outlined me-2 icon">alarm</span> 15
-                    min
-                  </p>
-                  <p class="fs-5"><span class="material-symbols-outlined me-2 icon">restaurant</span>
-                    13
-                    Portions</p>
-                  <p class="fs-5"><span class="material-symbols-outlined me-2 icon">menu_book</span>
-                    Hard
-                  </p>
-                </div>
-
-                <a href="#" class="btn rounded-3 btn-lg my-1 clr-yellow w-100" role="button">View recipe</a>
-              </div>
-            </div>
-          </li>
-        </a>
-        <a href="#" class="text-decoration-none">
-          <li class="cards_item-horizontal mx-0">
-            <div class="card-horizontal">
-              <div class="card_price-horizontal">
-
-                <p><span class="material-symbols-outlined fs-3 icon me-2">favorite</span>54</p>
-              </div>
-              <div class="card_image-horizontal"><img src="../public/img/recipe%20(7).png"
-                                                      alt="mixed vegetable salad in a mason jar. "></div>
-              <div class="card_content-horizontal">
-                <h2 class="card_title-horizontal fs-2 text-truncate">Creamy Mushroom Risotto</h2>
-                <div class="card_text-horizontal">
-                  <p class="fs-5"><span class="material-symbols-outlined me-2 icon">alarm</span> 15
-                    min
-                  </p>
-                  <p class="fs-5"><span class="material-symbols-outlined me-2 icon">restaurant</span>
-                    13
-                    Portions</p>
-                  <p class="fs-5"><span class="material-symbols-outlined me-2 icon">menu_book</span>
-                    Hard
-                  </p>
-                </div>
-
-                <a href="#" class="btn rounded-3 btn-lg my-1 clr-yellow w-100" role="button">View recipe</a>
+                <router-link :to="{name: 'recipeDetail'}" class="btn rounded-3 btn-lg my-1 clr-yellow w-100" role="button">View Recipe</router-link>
+                <!--                  <a href="#" class="btn rounded-3 btn-lg my-1 clr-yellow w-100" role="button">View recipe</a>-->
               </div>
             </div>
           </li>

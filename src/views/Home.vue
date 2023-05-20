@@ -1,49 +1,12 @@
 <script>
 // GLIDE JS
 import Glide from '@glidejs/glide'
+import Carousel from "../components/Carousel.vue";
+import {onMounted} from "vue";
 
 export default {
-  mounted() {
-    // Glide JS
-    new Glide('.glide', {
-      type: 'carousel',
-      autoplay: 2000,
-      hoverpause: true,
-      time: 2000,
-      gap: 225,
-      perView: 4,
-      breakpoints: {
-        576: {
-          // Small Phones
-          perView: 1,
-        },
-        678: {
-          // Big Phones
-          // gap:170,
-          perView: 1,
-          // peek: 75,
-        },
-        992: {
-          // Tablets
-          gap: 75,
-          perView: 2,
-          // peek: 15,
-        },
-        1200: {
-          // Big Tables or Small Laptops
-          gap: 200,
-          perView: 3,
-          // peek: 15,
-        },
-        1400: {
-          // gap: 25,
-          perView: 3,
-          // peek: 15,
-        },
-      }
-    }).mount();
-    // Glide JS
-  }
+  components: {Carousel},
+
 }
 
 // GLIDE J
@@ -51,101 +14,65 @@ export default {
 
 <template>
   <section class="container mt-5">
-    <header>
-      <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-          <router-link :to="{name: '/'}"><img src="/img/LOGO NEGRO.png" alt="Logo"></router-link>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="material-symbols-outlined">menu</span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 g-5 me-2">
-              <li class="nav-item mx-3">
-                <a class="btn fs-5 fw-normal" href="#index-recipes" role="button">Recipes</a>
-              </li>
-              <li class="nav-item mx-3">
-                <a class="btn fs-5 fw-normal" href="#index-recipesOfTheWeek" role="button">Recipes of the week</a>
-              </li>
-              <li class="nav-item">
-                <router-link :to="{name: 'login'}"
-                             class="nav-link btn btn-lg fs-5 fw-normal btn-singIn border-radius-login clr-whiteCream text-black "
-                >Login
-                </router-link>
-<!--                <a class="nav-link btn btn-lg fs-5 fw-normal btn-singIn border-radius-login clr-whiteCream text-black " href="./login.html" role="button">Log in</a>-->
-              </li>
-              <li class="nav-item">
-                <router-link :to="{name: 'singUp'}"
-                             class="nav-link btn btn-lg fs-5 btn-register border-radius-signup clr-yellow text-black"
-                >Sing Up
-                </router-link>
-<!--                <a class="nav-link btn btn-lg fs-5 btn-register border-radius-signup clr-yellow text-black" href="./signup.html" role="button">Sign up</a>-->
-              </li>
-            </ul>
+
+    <div class="container-fluid">
+      <div class="row mt-5">
+        <div class="col-12">
+          <div class="container-banner">
+            <p class="ms-5 text-banner"><span class="fw-bold">You</span> are what you <span
+                class="fw-bold">eat</span></p>
+            <img class="w-100" src="/img/banner.png" alt="">
           </div>
-        </div>
-      </nav>
-      <hr  class="yellow-line">
-      <div class="container-fluid">
-        <div class="row mt-5">
-          <div class="col-12">
-            <div class="container-banner">
-              <p class="ms-5 text-banner"><span class="fw-bold">You</span> are what you <span
-                  class="fw-bold">eat</span></p>
-              <img class="w-100" src="/img/banner.png" alt="">
-            </div>
-            <hr class="mt-5 yellow-line">
-          </div>
+          <hr class="mt-5 yellow-line">
         </div>
       </div>
-    </header>
-
-    <!--Header End-->
-    <div  id="index-recipesOfTheWeek" class="row-cols-1 my-5 ">
-      <h3 class="fw-bold title-carousel">RECIPES OF THE <span class="yellow-line">WEEK</span></h3>
     </div>
-    <!--Carousel Start -->
+    <!--    Carousel-->
+    <carousel :recipes="recipesList"></carousel>
+    <!--    Carousel-->
+    <!--    &lt;!&ndash;Carousel Start &ndash;&gt;-->
 
-    <!--Recipes of the week START -->
-    <div class="row container-carousel m-auto">
-      <div class="col">
-        <div class="glide">
-          <div class="glide__track" data-glide-el="track">
-            <ul class="glide__slides">
-              <li class="glide__slide">
-                <img class="img-sizeCards" src="/img/recipe%20(1).png" alt="">
-              </li>
-            </ul>
-          </div>
-          <div class="glide">
-            <div class="glide__arrows" data-glide-el="controls">
-              <button class="glide__arrow glide__arrow--left btn-carouselLeft" data-glide-dir="<">
-                <i class="bi bi-arrow-left-short fs-3"></i>
-              </button>
-              <button class="glide__arrow glide__arrow--right btn-carouselRight" data-glide-dir=">">
-                <i class="bi bi-arrow-right-short fs-3"></i>
-              </button>
-            </div>
-          </div>
-          <div class="glide">
-            <div class="glide__bullets" data-glide-el="controls[nav]">
-              <button class="glide__bullet" data-glide-dir="=0"></button>
-              <button class="glide__bullet" data-glide-dir="=1"></button>
-              <button class="glide__bullet" data-glide-dir="=2"></button>
-              <button class="glide__bullet" data-glide-dir="=3"></button>
-              <button class="glide__bullet" data-glide-dir="=4"></button>
-              <button class="glide__bullet" data-glide-dir="=5"></button>
-              <button class="glide__bullet" data-glide-dir="=6"></button>
-              <button class="glide__bullet" data-glide-dir="=7"></button>
-              <button class="glide__bullet" data-glide-dir="=8"></button>
-              <button class="glide__bullet" data-glide-dir="=9"></button>
-            </div>
-          </div>
-        </div>
-        <hr class="mt-5 yellow-line">
-      </div>
-      <!--Recipes of the week END -->
-      <!--Carousel End-->
-    </div>
+    <!--    &lt;!&ndash;Recipes of the week START &ndash;&gt;-->
+    <!--    <div class="row container-carousel m-auto">-->
+    <!--      <div class="col">-->
+    <!--        <div class="glide">-->
+    <!--          <div class="glide__track" data-glide-el="track">-->
+    <!--            <ul class="glide__slides">-->
+    <!--              <li class="glide__slide">-->
+    <!--                <img class="img-sizeCards" src="/img/recipe%20(1).png" alt="">-->
+    <!--              </li>-->
+    <!--            </ul>-->
+    <!--          </div>-->
+    <!--          <div class="glide">-->
+    <!--            <div class="glide__arrows" data-glide-el="controls">-->
+    <!--              <button class="glide__arrow glide__arrow&#45;&#45;left btn-carouselLeft" data-glide-dir="<">-->
+    <!--                <i class="bi bi-arrow-left-short fs-3"></i>-->
+    <!--              </button>-->
+    <!--              <button class="glide__arrow glide__arrow&#45;&#45;right btn-carouselRight" data-glide-dir=">">-->
+    <!--                <i class="bi bi-arrow-right-short fs-3"></i>-->
+    <!--              </button>-->
+    <!--            </div>-->
+    <!--          </div>-->
+    <!--          <div class="glide">-->
+    <!--            <div class="glide__bullets" data-glide-el="controls[nav]">-->
+    <!--              <button class="glide__bullet" data-glide-dir="=0"></button>-->
+    <!--              <button class="glide__bullet" data-glide-dir="=1"></button>-->
+    <!--              <button class="glide__bullet" data-glide-dir="=2"></button>-->
+    <!--              <button class="glide__bullet" data-glide-dir="=3"></button>-->
+    <!--              <button class="glide__bullet" data-glide-dir="=4"></button>-->
+    <!--              <button class="glide__bullet" data-glide-dir="=5"></button>-->
+    <!--              <button class="glide__bullet" data-glide-dir="=6"></button>-->
+    <!--              <button class="glide__bullet" data-glide-dir="=7"></button>-->
+    <!--              <button class="glide__bullet" data-glide-dir="=8"></button>-->
+    <!--              <button class="glide__bullet" data-glide-dir="=9"></button>-->
+    <!--            </div>-->
+    <!--          </div>-->
+    <!--        </div>-->
+    <!--        <hr class="mt-5 yellow-line">-->
+    <!--      </div>-->
+    <!--      &lt;!&ndash;Recipes of the week END &ndash;&gt;-->
+    <!--      &lt;!&ndash;Carousel End&ndash;&gt;-->
+    <!--    </div>-->
 
 
     <!--Recipes START -->
@@ -365,7 +292,7 @@ export default {
                   </div>
 
                   <router-link :to="{name: 'recipeDetail'}" class="btn rounded-3 btn-lg my-1 clr-yellow w-100" role="button">View Recipe</router-link>
-<!--                  <a href="#" class="btn rounded-3 btn-lg my-1 clr-yellow w-100" role="button">View recipe</a>-->
+                  <!--                  <a href="#" class="btn rounded-3 btn-lg my-1 clr-yellow w-100" role="button">View recipe</a>-->
                 </div>
               </div>
             </li>
@@ -377,78 +304,7 @@ export default {
     <!--Recipes END -->
   </section>
 
-  <!--    =================================================-->
-  <!--    FOOTER START-->
-  <!--    =================================================-->
-  <footer class="">
 
-    <div class="container-fluid clr-whiteCream border-top mt-5">
-
-      <!--==============================-->
-      <div class="col pt-3 pb-3 text-center bg-transparent">
-        <a href="#"><img src="/img/LOGO%20NEGRO.png" alt="img-brand-white"></a>
-
-      </div>
-
-      <!--FIN DE LA PRIMERA COLUM-->
-      <!--INICIO DE LA SEGUNDA COLUM-->
-      <div class="row align-items-center">
-
-        <!--INICIO ROW 02-->
-        <div class="col pt-3 me-4">
-          <ul class="social justify-content-center">
-            <li>
-              <a class="facebook" href="#">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <i class="bi bi-facebook"></i>
-              </a>
-            </li>
-            <li>
-              <a class="twitter" href="#">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-              </a>
-            </li>
-            <li>
-              <a class="instagram" href="#">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <i class="fa fa-instagram fs-3 pe-0 mx-0" aria-hidden="true"></i>
-              </a>
-            </li>
-          </ul>
-
-
-        </div>
-
-      </div>
-      <!--FIN DE LA SEGUNDA COLUM-->
-      <div class="row pb-4 pt-4 text-center">
-        <div class="d-flex flex-column justify-content-center">
-          <p class="txt-terms mb-0">Copyright 2022</p>
-          <p class="txt-terms mt-0">proyecto ITM desarrollo de aplicaciones interactivas_TM4100</p>
-        </div>
-
-      </div>
-
-
-
-    </div><!--FIN DEL CONTAINER-->
-
-
-  </footer>
-
-
-  <!--    =================================================-->
-  <!--    FOOTER END-->
-  <!--    =================================================-->
 
 
 
