@@ -1,32 +1,18 @@
 <script>
-
+import ApiSpoonacular from "../ApiSpoonacular.vue";
 import Glide from '@glidejs/glide'
 // import CardCarousel from "./CardCarousel.vue";
 
 export default {
   // components: {CardCarousel},
   props:{
-    recipes:[
-      {
-        id: 1,
-        name: "kkk",
-        image: "/img/recipe%20(1).png",
-      },
-      {
-        id: 1,
-        name: "kkk",
-        image: "/img/recipe%20(2).png",
-      },
-      {
-        id: 1,
-        name: "kkk",
-        image: "/img/recipe%20(3).png",
-      },
-    ]
+    recipes:[],
   },
-
+  beforeMount() {
+    console.log('Carousel Api',this.recipes.recipes[2])
+  },
   mounted:function (){
-    // Glide JS
+   // Glide JS
     new Glide('.glide', {
       type: 'carousel',
       autoplay: 2000,
@@ -65,18 +51,15 @@ export default {
       }
     }).mount();
     // Glide JS
-    console.log("Carousel",this.recipes)
+  //   console.log('Carousel Api',this.recipes.recipes[2])
   },
-  updated:function () {
-    console.log("Before Update",this.recipes)
-  }
 }
 
 </script>
 
 <template>
   <!--Carousel Start -->
-
+<!--  <h1>{{recipes.apiData[0]}}</h1>-->
   <div  id="index-recipesOfTheWeek" class="row-cols-1 my-5 ">
     <h3 class="fw-bold title-carousel">RECIPES OF THE <span class="yellow-line">WEEK</span></h3>
   </div>
@@ -87,13 +70,12 @@ export default {
       <div class="glide">
         <div class="glide__track" data-glide-el="track">
           <ul class="glide__slides">
-            <li
-                class="glide__slide">
-              ...
-            </li>
-<!--            <li class="glide__slide">-->
-<!--              <img class="img-sizeCards" src="/img/recipe%20(3).png" alt="">-->
+<!--            <li v-for="(item) in recipes.apiData" class="glide__slide">-->
+<!--              <img class="img-sizeCards" :src="item.img" alt="">-->
 <!--            </li>-->
+            <li class="glide__slide">
+              <img class="img-sizeCards" src="/img/recipe%20(3).png" alt="">
+            </li>
 <!--            <li class="glide__slide">-->
 <!--              <img class="img-sizeCards" src="/img/recipe%20(3).png" alt="">-->
 <!--            </li>-->

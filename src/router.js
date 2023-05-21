@@ -11,6 +11,7 @@ import AdminEdit from "./views/AdminEdit.vue";
 import Navbar from "./components/Navbar.vue"
 import Footer from "./components/Footer.vue";
 import NavbarAdmin from "./components/NavbarAdmin.vue";
+import Carousel from "./components/Carousel.vue";
 
 
 
@@ -23,6 +24,7 @@ const routes = [
         components: {
             default: Home,
             navbar: Navbar,
+            carousel: Carousel,
             footer: Footer
         },
         // props:{

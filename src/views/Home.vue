@@ -3,10 +3,10 @@
 import Glide from '@glidejs/glide'
 import Carousel from "../components/Carousel.vue";
 import {onMounted} from "vue";
+import ApiSpoonacular from "../ApiSpoonacular.vue";
 
 export default {
   components: {Carousel},
-
 }
 
 // GLIDE J
@@ -14,7 +14,6 @@ export default {
 
 <template>
   <section class="container mt-5">
-
     <div class="container-fluid">
       <div class="row mt-5">
         <div class="col-12">
@@ -28,7 +27,6 @@ export default {
       </div>
     </div>
     <!--    Carousel-->
-    <carousel :recipes="recipesList"></carousel>
     <!--    Carousel-->
     <!--    &lt;!&ndash;Carousel Start &ndash;&gt;-->
 
