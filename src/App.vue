@@ -1,16 +1,91 @@
 <script>
-import ApiSpoonacular from "./ApiSpoonacular.vue";
+// import ApiSpoonacular from "./ApiSpoonacular.vue";
 export default {
   name: 'App',
 
   data(){
     return{
-      dataRecipes: ApiSpoonacular.methods.getTop10Recipes()
+      loading: true,
+      recipes:[],
+      topRecipes:[],
+      categories:[]
     }
   },
 
   mounted() {
-    console.log("Api data", this.dataRecipes);
+
+    // $Recipes
+    // https://www.themealdb.com/api/json/v1/1/list.php?c=list
+
+    axios({
+      method: 'get',
+      url: 'https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood'
+    }).then(
+        (response) => {
+          let items = response.data.meals;
+          if (items.length > 0)this.loading = false
+          items.forEach(recipe => {
+            this.recipes.push({
+              id: recipe.idMeal,
+              name: recipe.strMeal,
+              img: recipe.strMealThumb + "/preview"
+            })
+          })
+
+          console.log('APP Recipes',this.recipes)
+        }
+    ).catch(
+        error => console.log(error)
+    );
+
+    // $Recipes
+
+
+    // ?TopRecipes
+    axios({
+      method: 'get',
+      url: 'https://www.themealdb.com/api/json/v1/1/filter.php?a=Canadian'
+    }).then(
+        (response) => {
+          let items = response.data.meals;
+          if (items.length > 0)this.loading = false
+          items.forEach(recipe => {
+            this.topRecipes.push({
+              name: recipe.strMeal,
+              img: recipe.strMealThumb
+            })
+          })
+        }
+    ).catch(
+        error => console.log(error)
+    );
+    // ?TopRecipes
+
+    //   !Categories
+    axios({
+      method: 'get',
+      url: 'https://www.themealdb.com/api/json/v1/1/categories.php'
+    }).then(
+        (response) => {
+          let items = response.data.categories;
+          if (items.length > 0)
+          items.forEach(category => {
+            this.categories.push({
+              id: category.idCategory,
+              name: category.strCategory
+            })
+          })
+          // // this.categories = response.data.meals
+          // let items = response.data.meals;
+          // items.forEach( element => {
+          //   this.categories.push({id:element.index, name: element.strCategory})
+          // }
+          // );
+        }
+    ).catch(
+        error => console.log(error)
+    );
+    //   !Categories
   }
 }
 </script>
@@ -18,8 +93,7 @@ export default {
 <template>
   <main>
     <router-view name="navbar"></router-view>
-    <router-view></router-view>
-    <router-view :recipes="dataRecipes" name="carousel"></router-view>
+    <router-view :topRecipes="this.topRecipes" :categories="this.categories" :recipes="this.recipes"></router-view>
     <router-view name="footer"></router-view>
   </main>
 </template>

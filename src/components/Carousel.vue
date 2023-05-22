@@ -1,5 +1,4 @@
 <script>
-import ApiSpoonacular from "../ApiSpoonacular.vue";
 import Glide from '@glidejs/glide'
 // import CardCarousel from "./CardCarousel.vue";
 
@@ -8,17 +7,14 @@ export default {
   props:{
     recipes:[],
   },
-  beforeMount() {
-    console.log('Carousel Api',this.recipes.recipes[2])
-  },
   mounted:function (){
-   // Glide JS
+    // Glide JS
     new Glide('.glide', {
       type: 'carousel',
       autoplay: 2000,
       hoverpause: true,
       time: 2000,
-      gap: 225,
+      gap: 285,
       perView: 4,
       breakpoints: {
         576: {
@@ -51,7 +47,8 @@ export default {
       }
     }).mount();
     // Glide JS
-  //   console.log('Carousel Api',this.recipes.recipes[2])
+    //   console.log('Carousel Api',this.recipes.recipes[2])
+    console.log("Carousel",this.recipes.length)
   },
 }
 
@@ -59,7 +56,7 @@ export default {
 
 <template>
   <!--Carousel Start -->
-<!--  <h1>{{recipes.apiData[0]}}</h1>-->
+  <!--  <h1>{{recipes.apiData[0]}}</h1>-->
   <div  id="index-recipesOfTheWeek" class="row-cols-1 my-5 ">
     <h3 class="fw-bold title-carousel">RECIPES OF THE <span class="yellow-line">WEEK</span></h3>
   </div>
@@ -70,15 +67,11 @@ export default {
       <div class="glide">
         <div class="glide__track" data-glide-el="track">
           <ul class="glide__slides">
-<!--            <li v-for="(item) in recipes.apiData" class="glide__slide">-->
-<!--              <img class="img-sizeCards" :src="item.img" alt="">-->
-<!--            </li>-->
-            <li class="glide__slide">
-              <img class="img-sizeCards" src="/img/recipe%20(3).png" alt="">
+
+            <li v-for="(recipe) in this.recipes" class="glide__slide">
+              <img class="img-sizeCards" :src="recipe.img" alt="">
             </li>
-<!--            <li class="glide__slide">-->
-<!--              <img class="img-sizeCards" src="/img/recipe%20(3).png" alt="">-->
-<!--            </li>-->
+
           </ul>
         </div>
         <div class="glide">
@@ -104,6 +97,9 @@ export default {
             <button class="glide__bullet" data-glide-dir="=7"></button>
             <button class="glide__bullet" data-glide-dir="=8"></button>
             <button class="glide__bullet" data-glide-dir="=9"></button>
+            <button class="glide__bullet" data-glide-dir="=10"></button>
+            <button class="glide__bullet" data-glide-dir="=11"></button>
+            <button class="glide__bullet" data-glide-dir="=12"></button>
           </div>
         </div>
       </div>

@@ -22,30 +22,19 @@ export default defineComponent({
       // !Axios
       axios({
         method: 'get',
-        url:'https://api.spoonacular.com/recipes/complexSearch?type=main course&apiKey=a78570f882de4c6a9a21489ec0a6bd2c'
+        url: 'https://www.themealdb.com/api/json/v1/1/filter.php?a=Canadian'
       }).then(
           (response) => {
-            items = response.data.results;
-
-            if(items.length > 0){
-              items.forEach( element => {
-                recipes.push({
-                  id:element.id,
-                  image:element.image,
-                  name: element.title,
-                  // category: "main course",
-                  // time: "Defaul time",
-                  // level: "Defaul level",
-                  // likes: 111,
-                  // ingredients: "NA",
-                  // instructions: "NA"
-                })
-              });
-            }
-            // console.log("Api",recipes)
+            console.log(response.data.meals)
+            // // this.categories = response.data.meals
+            // let items = response.data.meals;
+            // items.forEach( element => {
+            //   this.categories.push({id:element.index, name: element.strCategory})
+            // }
+            // );
           }
       ).catch(
-          // error => console.log(error)
+          error => console.log(error)
       );
       return{
         recipes

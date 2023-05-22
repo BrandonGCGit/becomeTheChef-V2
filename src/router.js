@@ -27,11 +27,11 @@ const routes = [
             carousel: Carousel,
             footer: Footer
         },
-        // props:{
-        //     default: true,
-        //     navbar: false,
-        //     footer: false
-        // },
+        props:{
+            default: true,
+            navbar: false,
+            footer: false
+        },
         name: '/'
     },
     {

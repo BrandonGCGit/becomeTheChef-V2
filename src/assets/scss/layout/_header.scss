@@ -32,12 +32,12 @@
 .text-banner{
   font-size: abs.$fs-banner;
   position: absolute;
-  @include abs.for-small-phone-only{
-    color: rebeccapurple;
-    font-size: abs.$fs-mdl;
-    bottom: 0.5rem;
-    right: 6rem;
-  }
+  //@include abs.for-small-phone-only{
+  //  color: rebeccapurple;
+  //  font-size: abs.$fs-mdl;
+  //  bottom: 0.5rem;
+  //  right: 6rem;
+  //}
 
   @include abs.for-phone-only{
     font-size: abs.$fs-mdl;
