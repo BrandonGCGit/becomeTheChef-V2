@@ -48,7 +48,7 @@ export default {
     }).mount();
     // Glide JS
     //   console.log('Carousel Api',this.recipes.recipes[2])
-    console.log("Carousel",this.recipes.length)
+    console.log("Carousel id",this.recipes[0].id)
   },
 }
 
@@ -69,7 +69,9 @@ export default {
           <ul class="glide__slides">
 
             <li v-for="(recipe) in this.recipes" class="glide__slide">
-              <img class="img-sizeCards" :src="recipe.img" alt="">
+              <router-link  :to="{name: 'recipeDetail', params: {id: recipe.id}}">
+                <img class="img-sizeCards" :src="recipe.img" alt="">
+              </router-link>
             </li>
 
           </ul>

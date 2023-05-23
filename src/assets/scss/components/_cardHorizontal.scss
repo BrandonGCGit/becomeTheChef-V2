@@ -64,10 +64,10 @@
 }
 
 .card_title-horizontal {
-  margin-top: -50px;
-  margin-bottom: 24px;
-  //text-shadow: abs.$clr-yellow 1px 0 15px;
-  color: abs.$clr-black;
+  position: absolute;
+  top: 210px;
+  color: abs.$clr-white-cream;
+  text-shadow: abs.$clr-black 3px 0px 6px;
 }
 
 .card_text-horizontal {
@@ -82,12 +82,10 @@
 }
 
 .card_price-horizontal {
-  position: relative;
+  position: absolute;
   top: 10px;
   right: 16px;
-  text-align: right;
   color: abs.$clr-white-cream;
-  font-family: "Raleway", sans-serif;
   height: 24px;
   font-size: 36px;
   font-weight: 400;

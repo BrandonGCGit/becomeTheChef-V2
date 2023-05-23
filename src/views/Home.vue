@@ -14,6 +14,12 @@ export default {
   mounted() {
     console.log("Home Categories", this.categories)
     console.log("Home top recipes", this.topRecipes)
+  },
+  methods:{
+    selectecCategory(category){
+      console.log("Home selected category " , category)
+      this.$emit('selectedcategory', category);
+    }
   }
 }
 
@@ -181,7 +187,7 @@ export default {
     </div>
 
     <!--    !List Category-->
-    <list-category v-if="this.categories.length > 0" :listCategories="this.categories"></list-category>
+    <list-category v-if="this.categories.length > 0" :listCategories="this.categories" v-on:selectedcategory="selectecCategory"></list-category>
     <!--    !List Category-->
 
     <!--    $List Recipes-->

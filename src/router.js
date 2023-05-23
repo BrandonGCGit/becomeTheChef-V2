@@ -35,11 +35,16 @@ const routes = [
         name: '/'
     },
     {
-        path: '/recipeDetail',
+        path: '/recipeDetail/:id',
         components: {
             default: RecipeDetail,
             navbar: Navbar,
             footer: Footer
+        },
+        props:{
+            default:true,
+            navbar: false,
+            footer: false
         },
         name: 'recipeDetail'
     },

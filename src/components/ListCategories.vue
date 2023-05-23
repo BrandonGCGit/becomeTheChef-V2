@@ -1,13 +1,22 @@
 <script>
 import {defineComponent} from 'vue'
 
+import CategoryButton from "./CategoryButton.vue";
+
 export default defineComponent({
   name: "ListCategories",
+  components:{CategoryButton},
   props:{
     listCategories:[]
   },
   mounted() {
     console.log("List categories", this.listCategories)
+  },
+  methods:{
+    onClickSelectedCategory(category){
+      console.log("List categories, category selected " + category);
+      this.$emit('selectedcategory',category);
+    }
   }
 })
 </script>
@@ -23,7 +32,8 @@ export default defineComponent({
         <div class=" collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ps-3">
             <li v-for="(category) in this.listCategories" class="nav-item">
-              <button class="btn ff-inter fs-5 me-5 btn-category">{{category.name}}</button>
+              <CategoryButton v-on:selectedcategory="onClickSelectedCategory" :name="category.name"></CategoryButton>
+<!--              <button class="btn ff-inter fs-5 me-5 btn-category">{{category.name}}</button>-->
             </li>
           </ul>
         </div>
