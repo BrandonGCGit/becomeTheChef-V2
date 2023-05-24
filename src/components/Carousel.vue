@@ -48,7 +48,7 @@ export default {
     }).mount();
     // Glide JS
     //   console.log('Carousel Api',this.recipes.recipes[2])
-    console.log("Carousel id",this.recipes[0].id)
+    // console.log("Carousel id",this.recipes[0].id)
   },
 }
 

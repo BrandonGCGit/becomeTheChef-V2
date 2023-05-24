@@ -10,11 +10,11 @@ export default defineComponent({
     listCategories:[]
   },
   mounted() {
-    console.log("List categories", this.listCategories)
+    // console.log("List categories", this.listCategories)
   },
   methods:{
     onClickSelectedCategory(category){
-      console.log("List categories, category selected " + category);
+      // console.log("List categories, category selected " + category);
       this.$emit('selectedcategory',category);
     }
   }

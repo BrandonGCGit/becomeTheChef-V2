@@ -34,7 +34,7 @@ export default {
             })
           })
 
-          console.log('APP Recipes',this.recipes)
+          // console.log('APP Recipes',this.recipes)
         }
     ).catch(
         error => console.log(error)
@@ -92,10 +92,11 @@ export default {
   methods:{
     selectedCategory(category){
       // $Recipes
+      this.recipes =[];
       // https://www.themealdb.com/api/json/v1/1/list.php?c=list
       axios({
         method: 'get',
-        url: 'https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood'
+        url: 'https://www.themealdb.com/api/json/v1/1/filter.php?c=' + category
       }).then(
           (response) => {
             let items = response.data.meals;
@@ -108,13 +109,55 @@ export default {
               })
             })
 
-            console.log('APP Recipes',this.recipes)
+            // console.log('APP Recipes',this.recipes)
           }
       ).catch(
           error => console.log(error)
       );
       // $Recipes
       // console.log("App selected category", category)
+    },
+
+    selectedCategories(categories){
+      // console.log("Selected categories from APP", categories)
+      // $Recipes
+      console.log("Recipes pro primera vez",this.recipes)
+      this.recipes =[];
+
+      // https://www.themealdb.com/api/json/v1/1/list.php?c=list
+      console.log("INICIANDO FOR", categories.length)
+      for (let i = 0; i < categories.length; i++){
+        console.log("SE ENTRO EN EL FOR")
+        let category;
+        let recipesSelectedCategory = [];
+        category = categories[i];
+        // console.log("Funcionandno el category de app" , category)
+        axios({
+          method: 'get',
+          url: 'https://www.themealdb.com/api/json/v1/1/filter.php?c=' + category
+        }).then(
+            (response) => {
+              let items = response.data.meals;
+              if (items.length > 0)this.loading = false
+              items.forEach(recipe => {
+                recipesSelectedCategory.push({
+                  id: recipe.idMeal,
+                  name: recipe.strMeal,
+                  img: recipe.strMealThumb
+                })
+              })
+              console.log('APP Recipes',this.recipes)
+              this.recipes.push(recipesSelectedCategory);
+            }
+        ).catch(
+            error => console.log(error)
+        );
+        // recipesSelectedCategory = [];
+      }
+      // $Recipes
+      // console.log("App selected category", category)
+      // console.log("TODO FUNCIONANDO CON EL SUPER FILTER",  this.recipes)
+      // console.log("TODO FUNCIONANDO CON EL SUPER FILTER  v2",  recipesSelectedCategory)
     }
   }
 }
@@ -128,6 +171,7 @@ export default {
         :categories="this.categories"
         :recipes="this.recipes"
         v-on:selectedcategory="selectedCategory"
+        v-on:selectedcategories="selectedCategories"
     ></router-view>
     <router-view name="footer"></router-view>
   </main>

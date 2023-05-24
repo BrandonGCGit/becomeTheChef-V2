@@ -11,7 +11,7 @@ export default defineComponent({
   },
   methods:{
     onClickCategoryButton(){
-      console.log("Click button category button")
+      // console.log("Click button category button")
       this.$emit('selectedcategory',this.name)
     }
   }

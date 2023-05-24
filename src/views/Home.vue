@@ -3,22 +3,28 @@
 import Carousel from "../components/Carousel.vue";
 import ListCategory from "../components/ListCategories.vue";
 import ListCards from "../components/ListCards.vue";
+import AccordionFilter from "../components/AccordionFilter.vue";
 
 export default {
-  components: {ListCategory, Carousel,ListCards},
+  components: {ListCategory, Carousel,ListCards,AccordionFilter},
   props:{
     recipes:[],
     topRecipes:[],
     categories:[]
   },
   mounted() {
-    console.log("Home Categories", this.categories)
-    console.log("Home top recipes", this.topRecipes)
+    // console.log("Home Categories", this.categories)
+    // console.log("Home top recipes", this.topRecipes)
   },
   methods:{
-    selectecCategory(category){
+    selectedCategory(category){
       console.log("Home selected category " , category)
       this.$emit('selectedcategory', category);
+    },
+    selectedCategories(categories){
+      console.log("Recipes en Home con el filter", this.recipes)
+      // console.log("Home selected category " , categories)
+      this.$emit('selectedcategories', categories);
     }
   }
 }
@@ -49,145 +55,15 @@ export default {
         <h3 class="title-carousel fw-normal fw-bold">RECIPES</h3>
       </div>
 
-      <div class="col-2">
-        <div class="dropdown">
-          <button type="button" class="btn clr-black dropdown btn-search " data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false" data-bs-auto-close="outside">
-            <i class="bi bi-filter fs-3"></i>
-          </button>
-          <div class="dropdown-menu dropdown-width dropdown-menu-end dropdown-menu-lg-start">
-            <h5 class="ff-inter px-3">Filters </h5>
-            <div class="input-group px-3 my-3">
-              <input type="text" class="form-control" placeholder="Hamburger..." aria-label="Username"
-                     aria-describedby="basic-addon1">
-              <span type="button" class="input-group-text btn btn-dark btn-search" id="basic-addon1">
-                    <span class="material-symbols-outlined text-dark ">search</span>
-                </span>
-            </div>
-            <form  class="px-3">
-              <!--                        @ACCORDION START-->
-              <div class="accordion  ff-inter" id="accordionPanelsStayOpenExample">
-                <div class="accordion-item border-0 border-bottom">
-                  <h2 class="accordion-header">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
-                      Category
-                    </button>
-                  </h2>
-                  <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
-                    <div class="accordion-body">
-                      <div class="form-check my-2">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                        <label class="form-check-label" for="flexCheckDefault">
-                          Appetizers
-                        </label>
-                      </div>
-                      <div class="form-check my-2">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                        <label class="form-check-label" for="flexCheckDefault">
-                          Appetizers
-                        </label>
-                      </div>
-                      <div class="form-check my-2">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                        <label class="form-check-label" for="flexCheckDefault">
-                          Appetizers
-                        </label>
-                      </div>
-                      <div class="form-check my-2">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                        <label class="form-check-label" for="flexCheckDefault">
-                          Appetizers
-                        </label>
-                      </div>
-                      <div class="form-check my-2">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                        <label class="form-check-label" for="flexCheckDefault">
-                          Appetizers
-                        </label>
-                      </div>
+      <!--      %Accordion Filter-->
+      <accordion-filter v-if="this.categories.length > 0" :listCategories="this.categories" v-on:selectedcategories="selectedCategories" ></accordion-filter>
+<!--      <accordion-filter v-if="this.categories.length > 0" :list-categories="this.categories"></accordion-filter>-->
+      <!--      %Accordion Filter-->
 
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item border-0 border-bottom">
-                  <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
-                      Occasion
-                    </button>
-                  </h2>
-                  <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
-                    <div class="accordion-body">
-                      <div class="form-check my-2">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                        <label class="form-check-label" for="flexCheckDefault">
-                          Holidays
-                        </label>
-                      </div>
-                      <div class="form-check my-2">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                        <label class="form-check-label" for="flexCheckDefault">
-                          Holidays
-                        </label>
-                      </div>
-                      <div class="form-check my-2">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                        <label class="form-check-label" for="flexCheckDefault">
-                          Holidays
-                        </label>
-                      </div>
-                      <div class="form-check my-2">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                        <label class="form-check-label" for="flexCheckDefault">
-                          Holidays
-                        </label>
-                      </div>
-                      <div class="form-check my-2">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                        <label class="form-check-label" for="flexCheckDefault">
-                          Holidays
-                        </label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item border-0 border-bottom">
-                  <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
-                      Complexity
-                    </button>
-                  </h2>
-                  <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
-                    <div class="accordion-body">
-                      <div class="form-check my-2">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                        <label class="form-check-label" for="flexCheckDefault">
-                          Easy
-                        </label>
-                      </div>
-                      <div class="form-check my-2">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                        <label class="form-check-label" for="flexCheckDefault">
-                          Medium
-                        </label>
-                      </div>
-                      <div class="form-check my-2">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                        <label class="form-check-label" for="flexCheckDefault">
-                          Hard
-                        </label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!--                        @ACCORDION START-->
-            </form>
-          </div>
-        </div>
-      </div>
     </div>
 
     <!--    !List Category-->
-    <list-category v-if="this.categories.length > 0" :listCategories="this.categories" v-on:selectedcategory="selectecCategory"></list-category>
+    <list-category v-if="this.categories.length > 0" :listCategories="this.categories" v-on:selectedcategory="selectedCategory"></list-category>
     <!--    !List Category-->
 
     <!--    $List Recipes-->
