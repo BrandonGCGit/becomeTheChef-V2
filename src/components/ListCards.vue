@@ -37,7 +37,8 @@ export default defineComponent({
               allRecipes.push({
                 id: recipe.id,
                 name: recipe.name,
-                img: recipe.img
+                img: recipe.img,
+                likes: recipe.likes
               });
             })
             console.log(allRecipes);
@@ -50,12 +51,17 @@ export default defineComponent({
     }
   },
   mounted() {
+  },
+  methods:{
+    onClickLike(id){
+      this.$emit('recipelike', id)
+    }
   }
 })
 </script>
 
 <template>
-  <p>{{listRecipesWithFilter}}</p>
+  {{listRecipesWithFilter}}
   <div class="row m-auto">
     <ul class="cards-horizontal m-auto">
       <!--todo Hacer nuevo dise;o de cartas-->
@@ -63,6 +69,8 @@ export default defineComponent({
             :id = recipe.id
             :img = recipe.img
             :name = recipe.name
+            :likes = recipe.likes
+            v-on:recipelike="onClickLike"
       ></Card>
     </ul>
   </div>

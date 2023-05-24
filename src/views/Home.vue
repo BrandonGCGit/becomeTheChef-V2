@@ -25,6 +25,9 @@ export default {
       console.log("Recipes en Home con el filter", this.recipes)
       // console.log("Home selected category " , categories)
       this.$emit('selectedcategories', categories);
+    },
+    onClickLike(id){
+      this.$emit("recipelike",id);
     }
   }
 }
@@ -67,7 +70,10 @@ export default {
     <!--    !List Category-->
 
     <!--    $List Recipes-->
-    <ListCards v-if="this.recipes.length > 0" :recipes="this.recipes"></ListCards>
+    <ListCards v-if="this.recipes.length > 0"
+               :recipes="this.recipes"
+               v-on:recipelike="onClickLike"
+    ></ListCards>
     <!--    $List Recipes-->
 
     <!--Recipes END -->

@@ -30,7 +30,8 @@ export default {
             this.recipes.push({
               id: recipe.idMeal,
               name: recipe.strMeal,
-              img: recipe.strMealThumb
+              img: recipe.strMealThumb,
+              likes: 0
             })
           })
 
@@ -105,7 +106,8 @@ export default {
               this.recipes.push({
                 id: recipe.idMeal,
                 name: recipe.strMeal,
-                img: recipe.strMealThumb
+                img: recipe.strMealThumb,
+                likes: 0
               })
             })
 
@@ -121,13 +123,13 @@ export default {
     selectedCategories(categories){
       // console.log("Selected categories from APP", categories)
       // $Recipes
-      console.log("Recipes pro primera vez",this.recipes)
+      // console.log("Recipes pro primera vez",this.recipes)
       this.recipes =[];
 
       // https://www.themealdb.com/api/json/v1/1/list.php?c=list
-      console.log("INICIANDO FOR", categories.length)
+      // console.log("INICIANDO FOR", categories.length)
       for (let i = 0; i < categories.length; i++){
-        console.log("SE ENTRO EN EL FOR")
+        // console.log("SE ENTRO EN EL FOR")
         let category;
         let recipesSelectedCategory = [];
         category = categories[i];
@@ -143,10 +145,11 @@ export default {
                 recipesSelectedCategory.push({
                   id: recipe.idMeal,
                   name: recipe.strMeal,
-                  img: recipe.strMealThumb
+                  img: recipe.strMealThumb,
+                  likes: 0
                 })
               })
-              console.log('APP Recipes',this.recipes)
+              // console.log('APP Recipes',this.recipes)
               this.recipes.push(recipesSelectedCategory);
             }
         ).catch(
@@ -158,6 +161,22 @@ export default {
       // console.log("App selected category", category)
       // console.log("TODO FUNCIONANDO CON EL SUPER FILTER",  this.recipes)
       // console.log("TODO FUNCIONANDO CON EL SUPER FILTER  v2",  recipesSelectedCategory)
+    },
+
+    onClickLike(id){
+      let recipe = this.recipes.find(recipe => recipe.id == id)
+      if (Array.isArray(this.recipes[0])){
+        for (let i = 0; i < this.recipes.length; i++){
+          for (let j = 0; j < this.recipes.length; j++){
+            if (this.recipes[j].find(recipe => recipe.id == id)){
+              this.recipes[j].find(recipe => recipe.id == id).likes++
+            }
+          }
+        }
+      }else{
+        recipe.likes++
+      }
+
     }
   }
 }
@@ -172,6 +191,7 @@ export default {
         :recipes="this.recipes"
         v-on:selectedcategory="selectedCategory"
         v-on:selectedcategories="selectedCategories"
+        v-on:recipelike="onClickLike"
     ></router-view>
     <router-view name="footer"></router-view>
   </main>
