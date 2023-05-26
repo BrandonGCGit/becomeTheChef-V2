@@ -2,17 +2,20 @@
 import {defineComponent} from 'vue'
 import Card from "./Card.vue";
 import {all} from "axios";
+import Loading from "./Loading.vue";
 
 export default defineComponent({
   name: "ListCards",
-  components:{Card},
+  components:{Loading, Card},
 
   props:{
-    recipes:[]
+    recipes:[],
   },
   data(){
     return{
+      loading: true,
       listRecipes: this.recipes
+
     }
   },
   computed:{
@@ -26,6 +29,7 @@ export default defineComponent({
     listRecipesWithFilter(recipes){
       console.log("Entre en el metodo")
       recipes = this.recipes
+      this.loading= !this.loading
       if(Array.isArray(this.recipes[0])){
         console.log("Entre en el if")
         let allRecipes = [];
@@ -47,10 +51,18 @@ export default defineComponent({
         console.log("ALL RECIPES ?", allRecipes);
 
         this.listRecipes = allRecipes;
+
+
+
       }
     }
   },
   mounted() {
+    if (this.recipes.length === 0){
+      console.log("No hay recetas se necesitan poner por default")
+    }else{
+      console.log("SI hay recetas selecionadas todo bien")
+    }
   },
   methods:{
     onClickLike(id){
@@ -62,16 +74,18 @@ export default defineComponent({
 
 <template>
   {{listRecipesWithFilter}}
+<!--  <loading v-show="this.loading"></loading>-->
   <div class="row m-auto">
     <ul class="cards-horizontal m-auto">
       <!--todo Hacer nuevo dise;o de cartas-->
-      <Card v-for="(recipe) in this.listRecipes"
+      <Card v-if="this.recipes.length > 0" v-for="(recipe) in this.listRecipes"
             :id = recipe.id
             :img = recipe.img
             :name = recipe.name
             :likes = recipe.likes
             v-on:recipelike="onClickLike"
       ></Card>
+
     </ul>
   </div>
 </template>

@@ -25,7 +25,7 @@ export default {
     }).then(
         (response) => {
           let items = response.data.meals;
-          if (items.length > 0)this.loading = false
+          if (items.length > 0)this.loading = !this.loading;
           items.forEach(recipe => {
             this.recipes.push({
               id: recipe.idMeal,
@@ -44,13 +44,14 @@ export default {
 
 
     // ?TopRecipes
+    // Top recipes no obtiene las recets mas votadas se esperara a tener la base de datos para tener la funionnalida correcta
     axios({
       method: 'get',
       url: 'https://www.themealdb.com/api/json/v1/1/filter.php?a=Canadian'
     }).then(
         (response) => {
           let items = response.data.meals;
-          if (items.length > 0)this.loading = false
+          if (items.length > 0)this.loading = !this.loading;
           items.forEach(recipe => {
             this.topRecipes.push({
               id: recipe.idMeal,
@@ -71,7 +72,7 @@ export default {
     }).then(
         (response) => {
           let items = response.data.categories;
-          if (items.length > 0)
+          if (items.length > 0) this.loading = !this.loading;
             items.forEach(category => {
               this.categories.push({
                 id: category.idCategory,
@@ -91,6 +92,7 @@ export default {
     //   !Categories
   },
   methods:{
+    // App>Home>ListCagories>CategoryButton
     selectedCategory(category){
       // $Recipes
       this.recipes =[];
@@ -120,49 +122,54 @@ export default {
       // console.log("App selected category", category)
     },
 
+    // App>Home>AccordionFilter>AccordionButton
     selectedCategories(categories){
       // console.log("Selected categories from APP", categories)
       // $Recipes
       // console.log("Recipes pro primera vez",this.recipes)
-      this.recipes =[];
+      console.log("lenght recipes", this.recipes.length)
 
-      // https://www.themealdb.com/api/json/v1/1/list.php?c=list
-      // console.log("INICIANDO FOR", categories.length)
-      for (let i = 0; i < categories.length; i++){
-        // console.log("SE ENTRO EN EL FOR")
-        let category;
-        let recipesSelectedCategory = [];
-        category = categories[i];
-        // console.log("Funcionandno el category de app" , category)
-        axios({
-          method: 'get',
-          url: 'https://www.themealdb.com/api/json/v1/1/filter.php?c=' + category
-        }).then(
-            (response) => {
-              let items = response.data.meals;
-              if (items.length > 0)this.loading = false
-              items.forEach(recipe => {
-                recipesSelectedCategory.push({
-                  id: recipe.idMeal,
-                  name: recipe.strMeal,
-                  img: recipe.strMealThumb,
-                  likes: 0
+        this.recipes =[];
+        // https://www.themealdb.com/api/json/v1/1/list.php?c=list
+        // console.log("INICIANDO FOR", categories.length)
+        for (let i = 0; i < categories.length; i++){
+          // console.log("SE ENTRO EN EL FOR")
+          let category;
+          let recipesSelectedCategory = [];
+          category = categories[i];
+          // console.log("Funcionandno el category de app" , category)
+          axios({
+            method: 'get',
+            url: 'https://www.themealdb.com/api/json/v1/1/filter.php?c=' + category
+          }).then(
+              (response) => {
+                let items = response.data.meals;
+                if (items.length > 0)this.loading = false;
+                items.forEach(recipe => {
+                  recipesSelectedCategory.push({
+                    id: recipe.idMeal,
+                    name: recipe.strMeal,
+                    img: recipe.strMealThumb,
+                    likes: 0
+                  })
                 })
-              })
-              // console.log('APP Recipes',this.recipes)
-              this.recipes.push(recipesSelectedCategory);
-            }
-        ).catch(
-            error => console.log(error)
-        );
-        // recipesSelectedCategory = [];
-      }
-      // $Recipes
-      // console.log("App selected category", category)
-      // console.log("TODO FUNCIONANDO CON EL SUPER FILTER",  this.recipes)
-      // console.log("TODO FUNCIONANDO CON EL SUPER FILTER  v2",  recipesSelectedCategory)
+                // console.log('APP Recipes',this.recipes)
+                this.recipes.push(recipesSelectedCategory);
+              }
+          ).catch(
+              error => console.log(error)
+          );
+          // recipesSelectedCategory = [];
+
+        }
+        // $Recipes
+        // console.log("App selected category", category)
+        // console.log("TODO FUNCIONANDO CON EL SUPER FILTER",  this.recipes)
+        // console.log("TODO FUNCIONANDO CON EL SUPER FILTER  v2",  recipesSelectedCategory)
+
     },
 
+    // App>Home>ListCards>Card
     onClickLike(id){
       let recipe = this.recipes.find(recipe => recipe.id == id)
       if (Array.isArray(this.recipes[0])){
@@ -177,6 +184,34 @@ export default {
         recipe.likes++
       }
 
+    },
+
+    // App>Home>AccordionFilter>Search
+    searchRecipeByName(recipeName){
+      this.recipes =[];
+      // $Recipes by name
+      axios({
+        method: 'get',
+        url: 'https://www.themealdb.com/api/json/v1/1/search.php?s=' + recipeName
+      }).then(
+          (response) => {
+            let items = response.data.meals;
+            if (items.length > 0)this.loading = !this.loading;
+            items.forEach(recipe => {
+              this.recipes.push({
+                id: recipe.idMeal,
+                name: recipe.strMeal,
+                img: recipe.strMealThumb,
+                likes: 0
+              })
+            })
+
+            // console.log('APP Recipes',this.recipes)
+          }
+      ).catch(
+          error => console.log(error)
+      );
+      // $Recipes by name
     }
   }
 }
@@ -189,9 +224,11 @@ export default {
         :topRecipes="this.topRecipes"
         :categories="this.categories"
         :recipes="this.recipes"
+        :loading="this.loading"
         v-on:selectedcategory="selectedCategory"
         v-on:selectedcategories="selectedCategories"
         v-on:recipelike="onClickLike"
+        v-on:searchrecipebyname="searchRecipeByName"
     ></router-view>
     <router-view name="footer"></router-view>
   </main>

@@ -94,18 +94,15 @@ export default {
           // TODO timeOfPreparation
           // TODO  timeOfCooking
           // TODO  totalTime
-          // for (var i = 1; i < items.meals[0].lenght)
-          console.log(this.recipe)
-          for (let i = 1; i < countProperties(items.meals[0]); i++){
-            if (items.meals[0].strIngredient + i != ""){
-              // this.recipe.ingredients[i] =
-              // console.log("Ingredient" + i, items.meals[0].strIngredient+ i)
-              // console.log("IF")
-              // console.log("ingriedients",ingredients + '1')
-              // console.log("hola" + i)
+          let recipeIngredients = []
+            for (let i = 1; i < countProperties(items.meals[0]); i++){
+            if (items.meals[0]["strIngredient" + i] != undefined && items.meals[0]["strIngredient" + i] != ""){
+              recipeIngredients.push(items.meals[0]["strIngredient" + i]);
+              this.recipe.ingredients = recipeIngredients;
             }
           }
           // TODO instructions
+          this.recipe.instructions = items.meals[0].strInstructions;
 
           // for (var i = 1; i < items.lenght; i++) {
           //   console.log("eNTRE EN EL FOR")
@@ -227,7 +224,7 @@ export default {
         class="row-cols-1  m-auto mt-4 clr-whiteCream border-radius-exterior">
       <h3 class="ff-inter fs-1 fw-bold ms-3 pt-3">Ingredients</h3>
       <ul class="fs-4 ms-4 p-4">
-        <li>{{ingredients}}</li>
+        <li v-for="(ingredients) in this.recipe.ingredients">{{ingredients}}</li>
 <!--        <li>2 1/4 cups all-purpose flour</li>-->
 <!--        <li>1 tsp baking soda</li>-->
 <!--        <li>1 tsp salt</li>-->
@@ -249,7 +246,7 @@ export default {
       <ol class="fs-4 px-5 ms-4 my-1 word-spacing-instructions instructions-step list-unstyled">
 
         <li class="">
-          <p> {{instructions}} </p>
+          <p> {{this.recipe.instructions}} </p>
         </li>
 <!--        <li class="instructions-step">-->
 <!--          <p> In a medium bowl, whisk together the flour, baking soda, and salt. </p>-->

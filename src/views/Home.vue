@@ -4,30 +4,42 @@ import Carousel from "../components/Carousel.vue";
 import ListCategory from "../components/ListCategories.vue";
 import ListCards from "../components/ListCards.vue";
 import AccordionFilter from "../components/AccordionFilter.vue";
+import Loading from "../components/Loading.vue";
 
 export default {
-  components: {ListCategory, Carousel,ListCards,AccordionFilter},
+  components: {Loading, ListCategory, Carousel,ListCards,AccordionFilter},
   props:{
+    loading:{
+      type: Boolean
+    },
     recipes:[],
     topRecipes:[],
     categories:[]
   },
   mounted() {
+    console.log("Loading ", this.loading)
     // console.log("Home Categories", this.categories)
     // console.log("Home top recipes", this.topRecipes)
   },
   methods:{
+    // Home>ListCategories>CategoryButton
     selectedCategory(category){
       console.log("Home selected category " , category)
       this.$emit('selectedcategory', category);
     },
+    // Home>AccordionFilter>AccordionButton
     selectedCategories(categories){
       console.log("Recipes en Home con el filter", this.recipes)
       // console.log("Home selected category " , categories)
       this.$emit('selectedcategories', categories);
     },
+    // Home>ListCards>Card
     onClickLike(id){
       this.$emit("recipelike",id);
+    },
+    // Home>AccordionFilter>Search
+    searchRecipeByName(recipeName){
+      this.$emit('searchrecipebyname', recipeName);
     }
   }
 }
@@ -36,6 +48,7 @@ export default {
 </script>
 
 <template>
+  <loading v-show="loading"></loading>
   <section class="container mt-5">
     <div class="container-fluid">
       <div class="row mt-5">
@@ -43,7 +56,7 @@ export default {
           <div class="container-banner">
             <p class="ms-5 text-banner"><span class="fw-bold">You</span> are what you <span
                 class="fw-bold">eat</span></p>
-            <img class="w-100" src="/img/banner.png" alt="">
+            <img class="w-100" src="/img/banner-home-v2.jpg" alt="">
           </div>
           <hr class="mt-5 yellow-line">
         </div>
@@ -59,14 +72,19 @@ export default {
       </div>
 
       <!--      %Accordion Filter-->
-      <accordion-filter v-if="this.categories.length > 0" :listCategories="this.categories" v-on:selectedcategories="selectedCategories" ></accordion-filter>
+      <accordion-filter
+          v-if="this.categories.length > 0"
+          :listCategories="this.categories"
+          v-on:selectedcategories="selectedCategories"
+          v-on:searchrecipebyname="searchRecipeByName"
+      ></accordion-filter>
 <!--      <accordion-filter v-if="this.categories.length > 0" :list-categories="this.categories"></accordion-filter>-->
       <!--      %Accordion Filter-->
 
     </div>
 
     <!--    !List Category-->
-    <list-category v-if="this.categories.length > 0" :listCategories="this.categories" v-on:selectedcategory="selectedCategory"></list-category>
+<!--    <list-category v-if="this.categories.length > 0" :listCategories="this.categories" v-on:selectedcategory="selectedCategory"></list-category>-->
     <!--    !List Category-->
 
     <!--    $List Recipes-->

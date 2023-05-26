@@ -1,9 +1,10 @@
 <script>
 import AccordionButton from "./AccordionButton.vue";
+import Search from "./Search.vue";
 
 export default {
   name:"AccordionFilter",
-  components: {AccordionButton},
+  components: {Search, AccordionButton},
 
   props:{
     listCategories:[]
@@ -16,6 +17,7 @@ export default {
   methods:{
     onClickSelectedCategory(category){
       let obtainIndex;
+
 
       if(this.selectedCategories.includes(category)){
 
@@ -33,25 +35,28 @@ export default {
       }
       // console.log("SelectedCategories Accordion filter", this.selectedCategories);
       // console.log("Accordion filter, category selected " + category);
+    },
+    searchRecipeByName(recipeName){
+      this.$emit('searchrecipebyname', recipeName);
     }
+
+
   }
 }
 </script>
 
 <template>
   <div class="col-2">
-    <div class="dropdown">
+    <div class="dropdown d-flex justify-content-end">
       <button type="button" class="btn clr-black dropdown btn-search " data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false" data-bs-auto-close="outside">
         <i class="bi bi-filter fs-3"></i>
       </button>
       <div class="dropdown-menu dropdown-width dropdown-menu-end dropdown-menu-lg-start">
         <h5 class="ff-inter px-3">Filters </h5>
         <div class="input-group px-3 my-3">
-          <input type="text" class="form-control" placeholder="Hamburger..." aria-label="Username"
-                 aria-describedby="basic-addon1">
-          <span type="button" class="input-group-text btn btn-dark btn-search" id="basic-addon1">
-                    <span class="material-symbols-outlined text-dark ">search</span>
-                </span>
+          <!--          !Search-->
+          <search v-on:searchrecipebyname="searchRecipeByName"></search>
+          <!--          !Search-->
         </div>
         <form  class="px-3">
           <!--                        @ACCORDION START-->

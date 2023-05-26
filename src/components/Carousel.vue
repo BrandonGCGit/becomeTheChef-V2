@@ -62,7 +62,7 @@ export default {
   </div>
 
   <!--Recipes of the week START -->
-  <div class="row container-carousel m-auto">
+  <div class="row container-carousel m-auto p-0">
     <div class="col">
       <div class="glide">
         <div class="glide__track" data-glide-el="track">
