@@ -104,32 +104,10 @@ export default {
           // TODO instructions
           this.recipe.instructions = items.meals[0].strInstructions;
 
-          // for (var i = 1; i < items.lenght; i++) {
-          //   console.log("eNTRE EN EL FOR")
-          //   if (items.meals.strIngredient + i != ""){
-          //     this.ingredients.push(items.meals.strIngredient + 1);
-          //     console.log("Recipe detail ingredients" ,this.ingredients);
-          //   }else{
-          //     i = items.lenght
-          //   }
-          //
-          // }
-          // items.forEach(recipe =>{
-          //   this.ingredients.push({
-          //
-          //   })
-          // })
-          //
-          // this.instructions = items.meals.strInstructions
-
         }
     ).catch(
         error => console.log(error)
     );
-    // console.log("recipe Details",this.id)
-    // this.$test.on('foo', data =>{
-    //   console.log("Bus details", data)
-    // })
   },
 }
 </script>
@@ -172,42 +150,42 @@ export default {
     <div class="row">
       <div class="col yellow-right-line mt-4 vh-25">
         <div class="clr-whiteCream text-center border-radius-exterior vh-25 ">
-          <h5 class="ff-inter pt-3 mb-5">Complexity</h5>
-          <p class="ff-inter fs-3">{{complexity}}</p>
+          <h5 class="ff-inter pt-3 mb-4">Complexity</h5>
+          <p class="ff-inter fs-5">{{complexity}}</p>
         </div>
       </div>
 
       <div class="col yellow-right-line mt-4 vh-25">
         <div class="clr-whiteCream text-center border-radius-exterior vh-25 ">
-          <h5 class="ff-inter pt-3 mb-5">Occasion</h5>
-          <p class="ff-inter fs-3">{{occasion}}</p>
+          <h5 class="ff-inter pt-3 mb-4">Occasion</h5>
+          <p class="ff-inter fs-5">{{occasion}}</p>
         </div>
       </div>
 
       <div class="col yellow-right-line mt-4 vh-25">
         <div class="clr-whiteCream text-center border-radius-exterior vh-25 ">
-          <h5 class="ff-inter pt-3 pb-4">Portions</h5>
-          <p class="ff-inter fs-lg">{{portions}}</p>
+          <h5 class="ff-inter pt-3">Portions</h5>
+          <p class="ff-inter fs-mdxl">{{portions}}</p>
         </div>
       </div>
 
       <div class="col yellow-right-line mt-4 vh-25">
         <div class="clr-whiteCream text-center border-radius-exterior vh-25 ">
-          <h5 class="ff-inter pt-3 pb-4">Time of preparation</h5>
-          <p class="ff-inter fs-6"><span class="fs-lg">{{timeOfPreparation}}</span>min</p>
+          <h5 class="ff-inter pt-3">Time of preparation</h5>
+          <p class="ff-inter fs-6"><span class="fs-mdxl">{{timeOfPreparation}}</span>min</p>
         </div>
       </div>
 
       <div class="col yellow-right-line mt-4 vh-25">
         <div class="clr-whiteCream text-center border-radius-exterior vh-25 ">
-          <h5 class="ff-inter pt-3 pb-4">Time of cooking</h5>
-          <p class="ff-inter fs-6"><span class="fs-lg">{{timeOfCooking}}</span>min</p>
+          <h5 class="ff-inter pt-3">Time of cooking</h5>
+          <p class="ff-inter fs-6"><span class="fs-mdxl">{{timeOfCooking}}</span>min</p>
         </div>
       </div>
 
       <div class="col  mt-4 vh-25">
         <div class="clr-whiteCream text-center border-radius-exterior vh-25 ">
-          <h5 class="ff-inter pt-3 pb-4">Total time</h5>
+          <h5 class="ff-inter pt-3">Total time</h5>
           <p class="ff-inter fs-6"><span class="fs-lg">{{totalTime}}</span>min</p>
         </div>
       </div>

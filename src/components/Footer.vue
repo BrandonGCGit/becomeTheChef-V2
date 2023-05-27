@@ -38,6 +38,7 @@
                 <span></span>
                 <span></span>
                 <span></span>
+                <i class="bi bi-twitter"></i>
               </a>
             </li>
             <li>
@@ -46,7 +47,7 @@
                 <span></span>
                 <span></span>
                 <span></span>
-                <i class="fa fa-instagram fs-3 pe-0 mx-0" aria-hidden="true"></i>
+                <i class="bi bi-instagram"></i>
               </a>
             </li>
           </ul>

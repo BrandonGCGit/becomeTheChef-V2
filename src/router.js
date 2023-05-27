@@ -66,10 +66,14 @@ const routes = [
         name: 'adminDashboard'
     },
     {
-        path: '/adminEdit',
+        path: '/adminEdit/:id',
         components:{
             default: AdminEdit,
             navbar: NavbarAdmin},
+        props:{
+            default: true,
+            navbar: false
+        },
         name: 'adminEdit'
     },
 
